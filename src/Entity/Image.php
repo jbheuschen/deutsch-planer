@@ -36,11 +36,18 @@ class Image
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Product", mappedBy="thumbnail")
      */
-    private $thumbnail_holders;
+    private $thumbnail_holder;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Product", mappedBy="images")
+     */
+    private $product_holder;
+
 
     public function __construct()
     {
-        $this->thumbnail_holders = new ArrayCollection();
+        $this->thumbnail_holder = new ArrayCollection();
+        $this->product_holder = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -87,15 +94,15 @@ class Image
     /**
      * @return Collection|Product[]
      */
-    public function getThumbnailHolders(): Collection
+    public function getThumbnailHolder(): Collection
     {
-        return $this->thumbnail_holders;
+        return $this->thumbnail_holder;
     }
 
     public function addThumbnailHolder(Product $thumbnailHolder): self
     {
-        if (!$this->thumbnail_holders->contains($thumbnailHolder)) {
-            $this->thumbnail_holders[] = $thumbnailHolder;
+        if (!$this->thumbnail_holder->contains($thumbnailHolder)) {
+            $this->thumbnail_holder[] = $thumbnailHolder;
             $thumbnailHolder->setThumbnail($this);
         }
 
@@ -104,8 +111,8 @@ class Image
 
     public function removeThumbnailHolder(Product $thumbnailHolder): self
     {
-        if ($this->thumbnail_holders->contains($thumbnailHolder)) {
-            $this->thumbnail_holders->removeElement($thumbnailHolder);
+        if ($this->thumbnail_holder->contains($thumbnailHolder)) {
+            $this->thumbnail_holder->removeElement($thumbnailHolder);
             // set the owning side to null (unless already changed)
             if ($thumbnailHolder->getThumbnail() === $this) {
                 $thumbnailHolder->setThumbnail(null);
@@ -114,4 +121,33 @@ class Image
 
         return $this;
     }
+
+    /**
+     * @return Collection|Product[]
+     */
+    public function getProductHolder(): Collection
+    {
+        return $this->product_holder;
+    }
+
+    public function addProductHolder(Product $productHolder): self
+    {
+        if (!$this->product_holder->contains($productHolder)) {
+            $this->product_holder[] = $productHolder;
+            $productHolder->addImage($this);
+        }
+
+        return $this;
+    }
+
+    public function removeProductHolder(Product $productHolder): self
+    {
+        if ($this->product_holder->contains($productHolder)) {
+            $this->product_holder->removeElement($productHolder);
+            $productHolder->removeImage($this);
+        }
+
+        return $this;
+    }
+
 }

@@ -9,6 +9,7 @@
 require('../css/app.css');
 require('../css/global.scss');
 require('universal-parallax/dist/universal-parallax.css');
+//require('mdbootstrap/css/mdb.min.css');
 //require('../css/para.css');
 
 // Need jQuery? Install it with "yarn add jquery", then uncomment to require it.
@@ -23,3 +24,4 @@ window.jQuery = $;
 // the bootstrap module doesn't export/return anything
 require('popper.js');
 require('bootstrap');
+//require('mdbootstrap/js/mdb.min.js');

@@ -9,6 +9,7 @@
             {{ encore_entry_link_tags('app') }}
 
             <link href="https://cdn.jsdelivr.net/npm/google-material-design-icons@1.0.0/icons.min.css" rel="Stylesheet" type="text/css" />
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 
         {% endblock %}
 
@@ -26,12 +27,16 @@
             {% include 'navigation/guest.html.twig' %}
 
         {% endblock %}
+        <main>
             {% block body %}{% endblock %}
+        </main>
         {% block javascripts %}
 
             {{ encore_entry_script_tags('app') }}
 
 
         {% endblock %}
+
+        {{ include('footer/guest.html.twig') }}
     </body>
 </html>

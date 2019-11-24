@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -27,25 +29,30 @@ class Product
     private $description;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Image", inversedBy="thumbnail_holders")
+     * @ORM\Column(type="text")
+     */
+    private $short_description;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Image", inversedBy="thumbnail_holder")
      * @ORM\JoinColumn(nullable=false)
      */
     private $thumbnail;
 
     /**
-     * @ORM\Column(type="text", nullable=true)
+     * @ORM\ManyToMany(targetEntity="App\Entity\Image", inversedBy="product_holder")
      */
-    private $short_description;
+    private $images;
 
     /**
      * @ORM\Column(type="float")
      */
     private $price;
 
-    /**
-     * @ORM\Column(type="array")
-     */
-    private $images = [];
+    public function __construct()
+    {
+        $this->images = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -76,6 +83,18 @@ class Product
         return $this;
     }
 
+    public function getShortDescription(): ?string
+    {
+        return $this->short_description;
+    }
+
+    public function setShortDescription(string $short_description): self
+    {
+        $this->short_description = $short_description;
+
+        return $this;
+    }
+
     public function getThumbnail(): ?Image
     {
         return $this->thumbnail;
@@ -88,14 +107,28 @@ class Product
         return $this;
     }
 
-    public function getShortDescription(): ?string
+    /**
+     * @return Collection|Image[]
+     */
+    public function getImages(): Collection
     {
-        return $this->short_description;
+        return $this->images;
     }
 
-    public function setShortDescription(?string $short_description): self
+    public function addImage(Image $image): self
     {
-        $this->short_description = $short_description;
+        if (!$this->images->contains($image)) {
+            $this->images[] = $image;
+        }
+
+        return $this;
+    }
+
+    public function removeImage(Image $image): self
+    {
+        if ($this->images->contains($image)) {
+            $this->images->removeElement($image);
+        }
 
         return $this;
     }
@@ -108,18 +141,6 @@ class Product
     public function setPrice(float $price): self
     {
         $this->price = $price;
-
-        return $this;
-    }
-
-    public function getImages(): ?array
-    {
-        return $this->images;
-    }
-
-    public function setImages(array $images): self
-    {
-        $this->images = $images;
 
         return $this;
     }
