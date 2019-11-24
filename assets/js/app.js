@@ -7,14 +7,19 @@
 
 // any CSS you require will output into a single css file (app.css in this case)
 require('../css/app.css');
-require('../css/global.scss')
+require('../css/global.scss');
+require('universal-parallax/dist/universal-parallax.css');
+//require('../css/para.css');
 
 // Need jQuery? Install it with "yarn add jquery", then uncomment to require it.
-// const $ = require('jquery');
+//const $ = require('jquery');
+//const jQuery = require('jquery'); a
+var $ = require('jquery');
+window.$ = $;
+window.jQuery = $;
 
-console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
-
-const $ = require('jquery');
+//const $ = require('jquery');
 // this "modifies" the jquery module: adding behavior to it
 // the bootstrap module doesn't export/return anything
+require('popper.js');
 require('bootstrap');

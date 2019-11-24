@@ -1,6 +1,7 @@
 {
-  "assets/app.css": "/assets/app.css",
-  "assets/app.js": "/assets/app.js",
-  "assets/runtime.js": "/assets/runtime.js",
-  "assets/vendors~app.js": "/assets/vendors~app.js"
+  "d-planer/public/assets/app.css": "/d-planer/public/assets/app.css",
+  "d-planer/public/assets/app.js": "/d-planer/public/assets/app.js",
+  "d-planer/public/assets/runtime.js": "/d-planer/public/assets/runtime.js",
+  "d-planer/public/assets/vendors~app.css": "/d-planer/public/assets/vendors~app.css",
+  "d-planer/public/assets/vendors~app.js": "/d-planer/public/assets/vendors~app.js"
 }

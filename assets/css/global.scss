@@ -1,4 +1,18 @@
-$primary: darken(#428bca, 20%);
 
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+
+$theme-colors: (
+        primary: $gray-800,
+        navbar: $gray-900
+);
 // the ~ allows you to reference things in node_modules
 @import "~bootstrap/scss/bootstrap";
+
+.bg-gray-900 {
+  background: $gray-900;
+}
+
+.parallax_sec {
+  min-height: 350px;
+}

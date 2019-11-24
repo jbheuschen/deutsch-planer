@@ -2,12 +2,13 @@
   "entrypoints": {
     "app": {
       "js": [
-        "/assets/runtime.js",
-        "/assets/vendors~app.js",
-        "/assets/app.js"
+        "/d-planer/public/assets/runtime.js",
+        "/d-planer/public/assets/vendors~app.js",
+        "/d-planer/public/assets/app.js"
       ],
       "css": [
-        "/assets/app.css"
+        "/d-planer/public/assets/vendors~app.css",
+        "/d-planer/public/assets/app.css"
       ]
     }
   }
