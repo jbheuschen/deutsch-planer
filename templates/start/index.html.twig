@@ -1,12 +1,8 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Firmenname{% endblock %}
+{% block title %}{{ craue_setting('company.name') }}{% endblock %}
 
 {% block body %}
-
-
-
-
 
     <div data-jarallax data-speed="0.2" class="jarallax parallax_sec firstscreen">
         <img class="jarallax-img" src="{{ asset('images/s80-37406.jpg') }}" alt="">

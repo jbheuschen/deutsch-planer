@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f1423307423a4ee1da6ec6983bba5e7d",
+    "content-hash": "055ceac0384f4b0609ba9110642b1c56",
     "packages": [
         {
             "name": "craue/config-bundle",
@@ -6868,7 +6868,8 @@
     "platform": {
         "php": "^7.1.3",
         "ext-ctype": "*",
-        "ext-iconv": "*"
+        "ext-iconv": "*",
+        "ext-intl": "^1.1"
     },
     "platform-dev": []
 }

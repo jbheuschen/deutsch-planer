@@ -83,6 +83,11 @@ class Product
         return $this;
     }
 
+    public function __toString()
+    {
+        return $this->getName();
+    }
+
     public function getShortDescription(): ?string
     {
         return $this->short_description;

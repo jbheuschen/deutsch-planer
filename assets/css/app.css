@@ -13,11 +13,11 @@ body {
 }
 
 .firstscreen {
-    min-height: 100vh !important;
+    min-height: calc(100vh - 56px) !important;
 }
 
 .welcome {
-    padding-top: 40%;
+    padding-top: 35%;
 }
 
 .jumpdown {

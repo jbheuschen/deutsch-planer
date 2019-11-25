@@ -140,6 +140,11 @@ class Image
         return $this;
     }
 
+    public function __toString()
+    {
+        return $this->filename;
+    }
+
     public function removeProductHolder(Product $productHolder): self
     {
         if ($this->product_holder->contains($productHolder)) {
