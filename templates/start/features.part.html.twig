@@ -1,4 +1,4 @@
-<div class="card-deck feature-deck">
+<div class="card-deck feature-deck d-none d-lg-flex">
 
 
     <div class="card text-center feature">
@@ -81,12 +81,37 @@
         <p class="feature-desc away">Durch die Unterstützung vieler Datenbank- und Mailserver kann die Medienverwaltung auf beinahe allen UNIX-basierten Serversystemen betrieben werden.</p>
 
         <div class="card-footer">
-            <a class="btn btn-secondary w-100" href="#">Mehr</a>
+            <a class="btn btn-secondary w-100" data-toggle="modal" data-target="#details" data-icon="server" data-title="Kompatiblität" data-description="Bla Bla Bla" href="#">Mehr</a>
         </div>
 
     </div>
 
 </div>
+
+
+
+{#MODAL#}
+
+<div class="modal fade" id="details" tabindex="-1" role="dialog" aria-labelledby="detailsLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="detailsLabel details-title">Titel</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Schließen">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p id="details-text">Text</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Schließen</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{#SCRIPT#}
 
 <script type="text/javascript">
 
@@ -103,7 +128,24 @@
        });
        $(".feature").mouseleave(function() {
            $(this).popover('hide');
-       })
+       });
+        $('#details').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            var title = button.data('title') // Extract info from data-* attributes
+            var text = button.data('description');
+            var icon = button.data('icon');
+            // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+            // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+            var modal = $(this)
+            modal.find('.modal-title').html('<i class="fas fa-' + icon + '">&nbsp;&nbsp;' + title + '</i>')
+            modal.find('#details-text').html(text)
+        })
     });
 
 </script>
+
+<div class="d-lg-none">
+
+    <p>Hi!</p>
+
+</div>

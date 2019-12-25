@@ -29,4 +29,7 @@ require('zurb-twentytwenty/js/jquery.twentytwenty');
 require('zurb-twentytwenty/css/twentytwenty.css');
 require('chart.js/dist/Chart.bundle.min');
 require('font-awesome/css/font-awesome.min.css');
+//require('bootbox/dist/bootbox.all.min');
+//import bootbox from 'bootbox';
+//var x = bootbox;
 //require('mdbootstrap/js/mdb.min.js');

@@ -27,6 +27,7 @@ $glowcol: $gray-900;
 }
 
 .feature {
+  display: inline-block;
   padding-top: 10px;
   margin-top: 10px;
   min-width: 285px;
@@ -48,6 +49,23 @@ $glowcol: $gray-900;
 
 popover-header {
   color: white;
+}
+
+.modal-header {
+  background-color: $gray-800;
+  color: white;
+  border-bottom: 1px solid rgba(15, 14, 15, 0.92);
+}
+
+.modal-content {
+  background-color: $gray-800;
+  color: white;
+}
+
+.modal-footer {
+  background-color: $gray-800;
+  color: white;
+  border-top: 1px solid rgba(15, 14, 15, 0.92);
 }
 
 .bs-popover-left .arrow::after,
