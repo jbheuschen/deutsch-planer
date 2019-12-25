@@ -1,0 +1,109 @@
+<div class="card-deck feature-deck">
+
+
+    <div class="card text-center feature">
+
+        <i class="fas fa-search fa-5x"></i>
+
+        <h3>Suche</h3>
+
+        <p class="feature-desc away">Die Suchfunktion ermöglichst es Ihnen, Ihre liebsten Werke mit wenigen Klicks zu finden.</p>
+
+        <div class="card-footer">
+            <a class="btn btn-secondary w-100" href="#">Mehr</a>
+        </div>
+
+    </div>
+
+
+    <div class="card text-center feature">
+
+        <i class="fas fa-users-cog fa-5x"></i>
+
+        <h3>Benutzerverwaltung</h3>
+
+        <p class="feature-desc away">Eine einfach gehaltene Benutzerverwaltung ermöglicht es Ihnen, Nutzer der Software auf einfache Weise zu verwalten.</p>
+
+        <div class="card-footer">
+            <a class="btn btn-secondary w-100" href="#">Mehr</a>
+        </div>
+
+    </div>
+
+    <div class="card text-center feature">
+
+        <i class="fas fa-adjust fa-5x"></i>
+
+        <h3>Dunkelmodus</h3>
+
+        <p class="feature-desc away">Der Dunkelmodus ermöglicht Ihnen eine angenehme Arbeitsatmosphäre in Betriebssystemen mit hauseigenem Dunkelmodus, beispielsweise MacOS.</p>
+
+        <div class="card-footer">
+            <a class="btn btn-secondary w-100" href="#">Mehr</a>
+        </div>
+
+    </div>
+
+    <div class="card text-center feature">
+
+        <i class="fas fa-cloud-download-alt fa-5x"></i>
+
+        <h3>Updates</h3>
+
+        <p class="feature-desc away">Automatische Updates sorgen stets für Sicherheit und garantieren Ihnen Zugriff auf neue Features.</p>
+
+        <div class="card-footer">
+            <a class="btn btn-secondary w-100" href="#">Mehr</a>
+        </div>
+
+    </div>
+
+    <div class="card text-center feature">
+
+        <i class="fas fa-file-pdf fa-5x"></i>
+
+        <h3>Export</h3>
+
+        <p class="feature-desc away">Eine breite Auswahl an Exportformaten ermöglicht Ihnen stetige Mobilität.</p>
+
+        <div class="card-footer">
+            <a class="btn btn-secondary w-100" href="#">Mehr</a>
+        </div>
+
+    </div>
+
+    <div class="card text-center feature">
+
+        <i class="fas fa-server fa-5x"></i>
+
+        <h3>Kompatibilität</h3>
+
+        <p class="feature-desc away">Durch die Unterstützung vieler Datenbank- und Mailserver kann die Medienverwaltung auf beinahe allen UNIX-basierten Serversystemen betrieben werden.</p>
+
+        <div class="card-footer">
+            <a class="btn btn-secondary w-100" href="#">Mehr</a>
+        </div>
+
+    </div>
+
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function() {
+        $('.feature').popover({
+            html : true,
+            content: function() {
+                return $('.feature-desc', this).html();
+            }
+        });
+
+       $(".feature").mouseenter(function() {
+            $(this).popover('show');
+       });
+       $(".feature").mouseleave(function() {
+           $(this).popover('hide');
+       })
+    });
+
+</script>

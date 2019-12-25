@@ -18,6 +18,63 @@ $glowcol: $gray-900;
   background: $gray-900;
 }
 
+.card {
+  background-color: darken($gray-900, 3);
+}
+
+.card-header, .card-footer {
+  background-color: darken($gray-900, 4);
+}
+
+.feature {
+  padding-top: 10px;
+  margin-top: 10px;
+  min-width: 285px;
+}
+
+.feature:hover {
+  background-color: darken($gray-900, 5);
+  transform: scale(1.01);
+}
+
+.popover {
+  background-color: darken($gray-900, 2);
+  color: white;
+}
+
+.popover-body {
+  color: white;
+}
+
+popover-header {
+  color: white;
+}
+
+.bs-popover-left .arrow::after,
+.bs-popover-auto[x-placement^="left"] .arrow::after {
+  border-left-color: darken($gray-900, 2);
+}
+
+.bs-popover-right .arrow::after,
+.bs-popover-auto[x-placement^="right"] .arrow::after {
+  border-right-color: darken($gray-900, 2);
+}
+
+.btn-tertiary {
+  background-color: darken($gray-900, 2);
+  color: white;
+}
+
+.btn-tertiary:hover {
+  background-color: darken($gray-900, 3);
+  color: white;
+}
+
+.feature-deck {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .parallax_sec {
   min-height: 350px;
 }

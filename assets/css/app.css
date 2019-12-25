@@ -90,6 +90,13 @@ body {
     display: flex;
 }
 
+.blend-diff {
+    mix-blend-mode: exclusion !important;
+}
+
+.away {
+    display: none;
+}
 
 /* control image height */
 .card-img-top-250 {
@@ -101,4 +108,5 @@ body {
     max-height: 350px;
     object-fit: cover;
 }
+
 

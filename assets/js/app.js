@@ -24,4 +24,9 @@ window.jQuery = $;
 // the bootstrap module doesn't export/return anything
 require('popper.js');
 require('bootstrap');
+require('zurb-twentytwenty/js/jquery.event.move');
+require('zurb-twentytwenty/js/jquery.twentytwenty');
+require('zurb-twentytwenty/css/twentytwenty.css');
+require('chart.js/dist/Chart.bundle.min');
+require('font-awesome/css/font-awesome.min.css');
 //require('mdbootstrap/js/mdb.min.js');
