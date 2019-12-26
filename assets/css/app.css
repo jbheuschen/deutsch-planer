@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Girassol|Josefin+Sans|Lobster&display=swap');
+
 body {
     background-color: lightgray;
 }
@@ -91,6 +93,7 @@ body {
 }
 
 .blend-diff {
+    -webkit-mix-blend-mode: exclusion !important;
     mix-blend-mode: exclusion !important;
 }
 
@@ -107,6 +110,44 @@ body {
 .sliderimg {
     max-height: 350px;
     object-fit: cover;
+}
+
+.i-step {
+    margin-top: 10px;
+}
+
+.pass {
+    color: #007b5e;
+}
+
+.fail {
+    color: #AA3333;
+}
+
+.fp {
+    margin-right: 5px;
+}
+
+@media (max-width: 767px) {
+    .aida-a {
+        padding-top: 30px;
+    }
+}
+
+/*
+    FONT Controller
+ */
+
+.girassol {
+    font-family: 'Girassol', cursive;
+}
+
+.lobster {
+    font-family: 'Lobster', cursive;
+}
+
+.josefin {
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 

@@ -123,6 +123,9 @@
     "ocramius/proxy-manager": {
         "version": "2.1.1"
     },
+    "php": {
+        "version": "7.3"
+    },
     "phpdocumentor/reflection-common": {
         "version": "2.0.0"
     },
@@ -136,6 +139,9 @@
         "version": "1.0.1"
     },
     "psr/container": {
+        "version": "1.0.0"
+    },
+    "psr/event-dispatcher": {
         "version": "1.0.0"
     },
     "psr/link": {
@@ -200,9 +206,6 @@
         ]
     },
     "symfony/css-selector": {
-        "version": "v4.4.0"
-    },
-    "symfony/debug": {
         "version": "v4.4.0"
     },
     "symfony/debug-bundle": {
@@ -324,6 +327,18 @@
             "version": "1.0",
             "ref": "fadbfe33303a76e25cb63401050439aa9b1a9c7f"
         }
+    },
+    "symfony/messenger": {
+        "version": "4.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "4.3",
+            "ref": "8a2675c061737658bed85102e9241c752620e575"
+        },
+        "files": [
+            "config/packages/messenger.yaml"
+        ]
     },
     "symfony/mime": {
         "version": "v4.4.0"
