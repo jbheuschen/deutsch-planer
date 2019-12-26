@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a2a5e2528a60d9468c9cab2a90b6b389",
+    "content-hash": "bb6f56a659bcc12a7105039bf25ed4d0",
     "packages": [
         {
             "name": "craue/config-bundle",

@@ -1,4 +1,6 @@
 {
+    "name": "jbh/dplaner",
+    "description": "Educational Project",
     "type": "project",
     "license": "proprietary",
     "require": {
