@@ -2,11 +2,42 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}Willkommen!{% endblock %}</title>
+        {% block stylesheets %}
+
+            {{ encore_entry_link_tags('app') }}
+            {{ encore_entry_script_tags('app') }}
+
+            <link href="https://cdn.jsdelivr.net/npm/google-material-design-icons@1.0.0/icons.min.css" rel="Stylesheet" type="text/css" />
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+        {% endblock %}
+
+
+
+        <script src="https://unpkg.com/jarallax@1/dist/jarallax.min.js"></script>
+
+        <script src="https://unpkg.com/jarallax@1/dist/jarallax-video.min.js"></script>
+
+        <script src="https://unpkg.com/jarallax@1/dist/jarallax-element.min.js"></script>
     </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+    <body class="text-white bg-primary">
+        {% block navigation %}
+
+            {% include 'navigation/guest.html.twig' %}
+
+        {% endblock %}
+        <main style="">
+            {% block body %}{% endblock %}
+        </main>
+        {% block javascripts %}
+
+            {{ encore_entry_script_tags('app') }}
+
+
+        {% endblock %}
+
+        {{ include('footer/guest.html.twig') }}
     </body>
 </html>

@@ -1,0 +1,15 @@
+{
+  "entrypoints": {
+    "app": {
+      "js": [
+        "/d-planer/public/assets/runtime.js",
+        "/d-planer/public/assets/vendors~app.js",
+        "/d-planer/public/assets/app.js"
+      ],
+      "css": [
+        "/d-planer/public/assets/vendors~app.css",
+        "/d-planer/public/assets/app.css"
+      ]
+    }
+  }
+}

@@ -1,3 +1,153 @@
+@import url('https://fonts.googleapis.com/css?family=Girassol|Josefin+Sans|Lobster&display=swap');
+
 body {
     background-color: lightgray;
 }
+
+.isec {
+    min-height: 400px;
+    background: transparent;
+}
+
+.flsec { /*Add Margin To Floating Sections*/
+    margin-top: 35px;
+    margin-bottom: 30px;
+}
+
+.firstscreen {
+    min-height: calc(100vh - 56px) !important;
+}
+
+.welcome {
+    padding-top: 35%;
+}
+
+.jumpdown {
+    font-size: large;
+}
+
+.pad {
+    margin-top: 60px;
+}
+
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+.material-icons.md-56 { font-size: 56px; }
+
+.animated {
+    -webkit-animation-duration: .5s;
+    animation-duration: .5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes bounce {
+    0%, 100% {
+        -webkit-transform: translateY(0);
+    }
+    50% {
+        -webkit-transform: translateY(-5px);
+    }
+}
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+.bounce {
+    -webkit-animation-name: bounce;
+    animation-name: bounce;
+}
+
+/* equal card height */
+.row-equal > div[class*='col-'] {
+    display: flex;
+    flex: 1 0 auto;
+}
+
+.row-equal .card {
+    width: 100%;
+}
+
+/* ensure equal card height inside carousel */
+.carousel-inner>.row-equal.active,
+.carousel-inner>.row-equal.next,
+.carousel-inner>.row-equal.prev {
+    display: flex;
+}
+
+/* prevent flicker during transition */
+.carousel-inner>.row-equal.active.left,
+.carousel-inner>.row-equal.active.right {
+    opacity: 0.5;
+    display: flex;
+}
+
+.blend-diff {
+    -webkit-mix-blend-mode: exclusion !important;
+    mix-blend-mode: exclusion !important;
+}
+
+.away {
+    display: none;
+}
+
+/* control image height */
+.card-img-top-250 {
+    max-height: 250px;
+    overflow:hidden;
+}
+
+.sliderimg {
+    max-height: 350px;
+    object-fit: cover;
+}
+
+.i-step {
+    margin-top: 10px;
+}
+
+.pass {
+    color: #007b5e;
+}
+
+.fail {
+    color: #AA3333;
+}
+
+.fp {
+    margin-right: 5px;
+}
+
+@media (max-width: 767px) {
+    .aida-a {
+        padding-top: 30px;
+    }
+}
+
+/*
+    FONT Controller
+ */
+
+.girassol {
+    font-family: 'Girassol', cursive;
+}
+
+.lobster {
+    font-family: 'Lobster', cursive;
+}
+
+.josefin {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+

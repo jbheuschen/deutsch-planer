@@ -1,0 +1,216 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mercredi Inventions{% endblock %}
+
+{% block body %}
+
+    <div data-jarallax data-speed="0.2" class="jarallax parallax_sec firstscreen" data-img-position="center" data-img-size="scale-down">
+        <picture class="jarallax-img">
+            <source srcset="{{ asset('promo/imac15_retina_opener.png') }}" media="(min-width: 992px)">
+            <source srcset="{{ asset('promo/iPadPro3-C_ipadair2_spacegrey_landscape.png') }}" media="(min-width: 768px)" style=>
+            <img src="{{ asset('promo/iPhone-11Max_iphonexspacegrey_portrait.png') }}" class="aida-a" style="max-width: 100vw;">
+        </picture>
+        <div class="welcome h-100 d-flex justify-content-center align-items-center">
+            <div class="text-center">
+                <h1 class="text-center blend-diff girassol">Medienverwaltung</h1>
+                <i class="text-center blend-diff">Ihr neuer Weg, den Überblick zu behalten!</i>
+
+                <div class="h-100 d-flex justify-content-center align-items-center">
+                    <div class="arrow animated bounce" id="arrow">
+
+                        <a href="#start" class="scrolldown text-white text-center blend-diff"><i class="material-icons md-56">keyboard_arrow_down</i></a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container section flsec firstsection">
+        <a id="start"><h1 class="text-center">Features</h1></a>
+
+        <br>
+
+        {#<div class="bd-example">
+            <div id="features" class="carousel slide carousel-fade" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#features" data-slide-to="0" class="active"></li>
+                    <li data-target="#features" data-slide-to="1"></li>
+                    <li data-target="#features" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="{{ asset('images/hubble_emitting.jpg') }}" class="d-block w-100 sliderimg" alt="Feature I">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Produktfeature</h5>
+                            <p>Eine euphemistische Beschreibung für ein Feature.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{{ asset('images/hubble.jpg') }}" class="d-block w-100 sliderimg" alt="Feature II">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Produktfeature II</h5>
+                            <p>Eine euphemistische Beschreibung für ein Feature.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{{ asset('images/s80-37406.jpg') }}" class="d-block w-100 sliderimg" alt="Feature III">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Produktfeature III</h5>
+                            <p>Eine euphemistische Beschreibung für ein Feature.</p>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#features" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">zurück</span>
+                </a>
+                <a class="carousel-control-next" href="#features" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">weiter</span>
+                </a>
+            </div>
+        </div>#}
+
+        {{ include('start/features.part.html.twig') }}
+
+        <div class="comparison twentytwenty-container">
+            <img src="{{ asset('images/comparison/light.png') }}">
+            <img src="{{ asset('images/comparison/dark.png') }}">
+        </div>
+
+
+
+
+    </div>
+
+    <div data-jarallax data-speed="0.2" class="jarallax parallax_sec">
+        <img class="jarallax-img" src="{{ asset('images/hubble.jpg') }}" alt="">
+    </div>
+
+
+    <div class="container section flsec">
+
+        <div class="head text-center">
+            <a id="installation"><h1>Installation</h1></a>
+        </div>
+        {{ include('start/installation.part.html.twig') }}
+
+        <br>
+       <div class="head text-center">
+           <a id="requirements"><h1>Systemvorraussetzungen</h1></a>
+       </div>
+
+        <div class="table-responsive">
+            <table class="table table-hover table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col" colspan="2">normale Installation</th>
+                        <th scope="col" colspan="2">Docker-Installation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <th scope="col">
+                            empfohlen
+                        </th>
+                        <th scope="col">
+                            benötigt
+                        </th>
+                        <th scope="col">
+                            empfohlen
+                        </th>
+                        <th scope="col">
+                            benötigt
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>Betriebssystem</td>
+                        <td><i class="fab fa-windows fail fp" title="Windows"></i><i class="fab fa-linux pass fp" title="Linux"></i><i class="fab fa-apple pass fp" title="MacOS"></i></td>
+                        <td><i class="fab fa-windows pass fp" title="Windows"></i><i class="fab fa-linux pass fp" title="Linux"></i><i class="fab fa-apple pass fp" title="MacOS"></i></td>
+                        <td><i class="fab fa-windows pass fp" title="Windows"></i><i class="fab fa-linux pass fp" title="Linux"></i><i class="fab fa-apple pass fp" title="MacOS"></i></td>
+                        <td><i class="fab fa-windows pass fp" title="Windows"></i><i class="fab fa-linux pass fp" title="Linux"></i><i class="fab fa-apple pass fp" title="MacOS"></i></td>
+                    </tr>
+                    <tr>
+                        <td>Web-Server</td>
+                        <td>Apache 2</td>
+                        <td>Apache 2 / NGINX</td>
+                        <td><i class="fas fa-times fail" title="Nicht benötigt"></i></td>
+                        <td><i class="fas fa-times fail" title="Nicht benötigt"></i></td>
+                    </tr>
+                    <tr>
+                        <td>PHP</td>
+                        <td>PHP >= 7.3</td>
+                        <td>PHP > 7.2</td>
+                        <td><i class="fas fa-times fail" title="Nicht benötigt"></i></td>
+                        <td><i class="fas fa-times fail" title="Nicht benötigt"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div data-jarallax data-speed="0.2" class="jarallax parallax_sec">
+        <img class="jarallax-img" src="{{ asset('images/hubble_emitting.jpg') }}" alt="">
+    </div>
+
+
+    <div class="container section flsec">
+
+        <p>
+
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut auctor ex. Nam condimentum malesuada scelerisque. Vestibulum in massa vehicula, convallis lacus et, finibus neque. In nec varius libero. Aliquam pharetra viverra pretium. Duis enim lectus, vehicula in aliquet quis, congue ac mi. Suspendisse eu enim non orci faucibus varius eget in tortor. Aliquam suscipit pulvinar aliquam. Mauris congue dolor eget gravida iaculis. Phasellus volutpat a augue nec iaculis. Cras imperdiet et est non aliquam. Sed id tempor orci. Nam ut pretium ante. Maecenas hendrerit, lorem quis venenatis vulputate, nulla neque pulvinar diam, a auctor massa sem eget erat.
+
+            Fusce rhoncus nisi ex, sed euismod arcu cursus eget. Mauris auctor ligula a augue mollis, id sollicitudin nisi maximus. Donec quis nunc in dui hendrerit dapibus. Sed id dictum turpis, at congue ipsum. Nulla volutpat neque nec tincidunt pharetra. Cras tempus euismod risus, ac semper mauris ullamcorper eu. Vestibulum pretium imperdiet venenatis. Nam viverra elementum sapien nec faucibus. In ut luctus ipsum. Nam ultrices ac quam sit amet molestie. Vestibulum consectetur non orci at rhoncus. Ut placerat, erat id mattis porttitor, sem ante rhoncus leo, non pretium velit massa ac sem. Aliquam imperdiet diam turpis, at fringilla tortor egestas eget.
+
+            Phasellus suscipit ut ante ac sagittis. Fusce id nisi eget sapien semper hendrerit ac vitae est. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce aliquet velit in sapien convallis ultricies. Phasellus non pretium magna, non tincidunt purus. Vivamus cursus sodales cursus. Sed pharetra, neque sit amet mollis sollicitudin, nunc mauris euismod turpis, in faucibus ante nisl interdum lorem. Curabitur et scelerisque nisi, vitae volutpat tortor. Sed aliquam tellus congue orci faucibus, in posuere mauris fermentum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse non lacus at libero venenatis accumsan. Praesent ac tortor tempor, bibendum purus eu, efficitur sapien. Suspendisse tincidunt sapien ac felis commodo, sit amet pharetra velit mollis. Donec sed scelerisque urna. Ut eu magna commodo, convallis urna eu, rhoncus metus. Aliquam sed dictum libero, quis aliquet leo.
+
+            Curabitur aliquet finibus sapien, quis aliquet urna viverra ut. Praesent dignissim urna nec vehicula accumsan. Nulla id tincidunt arcu. Sed a sapien diam. Nunc non eros sed lacus ultricies vestibulum. Maecenas cursus consectetur leo sit amet ullamcorper. Suspendisse potenti. Maecenas in tellus id leo ultricies viverra. Aenean eu interdum lectus. Maecenas convallis, velit vitae rutrum tempor, nunc nunc imperdiet lacus, vitae fringilla tortor risus fermentum mauris. Mauris sed orci vitae dui lacinia rutrum. Nunc dignissim sed metus in lacinia. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus eget sapien eleifend, scelerisque elit porttitor, elementum neque.
+
+            Sed rhoncus mollis dictum. Sed nulla nisi, rutrum et diam sit amet, suscipit congue leo. Fusce ut aliquam risus, lacinia sollicitudin sem. Aenean accumsan velit id tincidunt gravida. Morbi convallis metus at metus venenatis, et bibendum diam tempus. Aliquam tincidunt porttitor fringilla. Vestibulum dictum leo at magna convallis, ac eleifend quam eleifend. In hac habitasse platea dictumst. Morbi posuere purus lobortis nibh tempor viverra.
+
+            Duis lacinia, felis nec fermentum fringilla, diam mauris vulputate ex, quis placerat libero mauris sit amet urna. Morbi sit amet arcu id tortor tempus dapibus. Donec consequat auctor elementum. Donec venenatis pharetra odio. In in nunc euismod, sagittis magna eget, sodales enim. Suspendisse condimentum, turpis ut placerat dignissim, nulla dolor molestie lacus, quis rhoncus dolor ipsum sagittis est. Proin efficitur semper vulputate. In semper mauris id ligula finibus, eu iaculis diam scelerisque. Phasellus ullamcorper lorem urna, in accumsan massa dapibus ut. Nulla mattis mollis diam sit amet dictum. Vivamus lacinia dictum dui, in vestibulum dolor ullamcorper accumsan. Vivamus luctus pretium nibh, at suscipit ante gravida ut. Cras quis lorem nec neque elementum consectetur. Sed elementum, est eu egestas auctor, odio massa sodales tellus, id hendrerit neque dolor sed urna. Nam cursus felis sit amet lectus faucibus laoreet.
+
+            Duis sed felis tincidunt, gravida est ut, pretium sapien. Maecenas vehicula malesuada tincidunt. Sed et purus velit. Donec maximus tincidunt pulvinar. Curabitur consectetur tempor nibh, quis tempor nulla. Morbi porttitor, libero sed pellentesque volutpat, lorem magna dapibus urna, id pharetra elit dolor id orci. Nam tincidunt purus vel pharetra faucibus. Integer ac mauris tristique, auctor lectus non, scelerisque massa. Vestibulum imperdiet libero at tempor ullamcorper. Mauris odio lectus, lobortis et dignissim ac, ullamcorper vel enim. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus vel sapien ac augue commodo blandit.
+
+            Proin ullamcorper hendrerit urna vitae molestie. Nulla ut blandit nulla. Sed interdum mi ac ligula egestas, interdum fringilla ligula molestie. Curabitur ac imperdiet risus. Praesent ligula purus, consectetur et vulputate at, tempus pulvinar ante. Curabitur odio tellus, varius laoreet sagittis eu, gravida sed velit. Vivamus at ligula arcu.
+
+        </p>
+
+    </div>
+
+    </div>
+
+
+    {#<img class="thumbnail" src="{{ asset('images/hubble.jpg') }}" alt="image">
+    <img class="thumbnail" src="{{ asset('images/hubble_emitting.jpg') }}" alt="image">#}
+
+
+
+    {#<div data-jarallax data-speed="0.2" class="jarallax parallax_sec" data-jarallax-video="https://youtu.be/exFJZvJVU0k">
+    </div>#}
+
+    {% block javascripts %}
+        {{ parent() }}
+        <script type="text/javascript">
+
+            $('.scrolldown').click(function(){
+                $('html, body').animate({
+                    scrollTop: ($( $(this).attr('href') ).offset().top - 56)
+                },1000);
+                return false;
+            });
+
+            $(document).ready(function() {
+                $(".comparison").twentytwenty({
+                   'before_label': 'Heller Modus',
+                   'after_label': 'Dunkelmodus'
+                });
+            })
+
+        </script>
+    {% endblock %}
+{% endblock %}

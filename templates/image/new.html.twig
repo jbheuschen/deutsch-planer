@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Image{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Bild hochladen</h1>
+
+        {{ include('image/_form.html.twig') }}
+
+        <a href="{{ path('image_index') }}">back to list</a>
+    </div>
+{% endblock %}

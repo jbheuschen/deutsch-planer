@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Image index{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Bilderverzeichnis</h1>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Dateiname</th>
+                    <th>Vorschau</th>
+                    <th>interner Pfad</th>
+                    <th>Mime</th>
+                    <th>Aktionen</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for image in images %}
+                <tr>
+                    <td>{{ image.id }}</td>
+                    <td>{{ image.filename }}</td>
+                    <td><img style="border-radius: 25px; max-height: 150px; max-width: 150px;" src="{{ path('image', {'id': image.id}) }}"></td>
+                    <td>{{ image.path }}</td>
+                    <td>{{ image.mime }}</td>
+                    <td>
+                        <a href="{{ path('image_show', {'id': image.id}) }}">show</a>
+                        <a href="{{ path('image_edit', {'id': image.id}) }}">edit</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="{{ path('image_new') }}">Create new</a>
+    </div>
+{% endblock %}

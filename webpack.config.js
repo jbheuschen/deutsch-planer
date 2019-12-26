@@ -8,11 +8,16 @@ if (!Encore.isRuntimeEnvironmentConfigured()) {
 
 Encore
     // directory where compiled assets will be stored
-    .setOutputPath('public/build/')
+    .setOutputPath('public/assets/')
     // public path used by the web server to access the output path
-    .setPublicPath('/build')
+    .setPublicPath('/d-planer/public/assets')
     // only needed for CDN's or sub-directory deploy
     //.setManifestKeyPrefix('build/')
+
+    .enableSassLoader()
+    .enableStylusLoader()
+    .enableLessLoader()
+    .autoProvidejQuery()
 
     /*
      * ENTRY CONFIG
@@ -69,6 +74,8 @@ Encore
     // uncomment if you use API Platform Admin (composer req api-admin)
     //.enableReactPreset()
     //.addEntry('admin', './assets/js/admin.js')
+    //.enablePostCssLoader()
+
 ;
 
 module.exports = Encore.getWebpackConfig();
