@@ -150,4 +150,56 @@ body {
     font-family: 'Josefin Sans', sans-serif;
 }
 
+/*
+    Ratings
+ */
+
+.verified {
+    color: green;
+}
+
+.rating-card {
+    margin-bottom: 10px;
+}
+
+.star-i, .unstar-i {
+    color: #a77b00;
+}
+
+/*
+    Margins
+ */
+
+.mrt-5 {
+    margin-top: 5px;
+}
+
+.mrt-10 {
+    margin-top: 10px;
+}
+
+.mrt-20 {
+    margin-top: 20px;
+}
+
+.mrt-25 {
+    margin-top: 25px;
+}
+
+.mrt-30 {
+    margin-top: 30px;
+}
+
+.mrt-40 {
+    margin-top: 40px;
+}
+
+.mrt-50 {
+    margin-top: 50px;
+}
+
+/*
+
+ */
+
 

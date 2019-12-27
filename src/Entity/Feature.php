@@ -33,14 +33,9 @@ class Feature
      */
     private $icon;
 
-    /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Product", mappedBy="features")
-     */
-    private $products;
 
     public function __construct()
     {
-        $this->products = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -85,34 +80,6 @@ class Feature
     public function setIcon(string $icon): self
     {
         $this->icon = $icon;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|Product[]
-     */
-    public function getProducts(): Collection
-    {
-        return $this->products;
-    }
-
-    public function addProduct(Product $product): self
-    {
-        if (!$this->products->contains($product)) {
-            $this->products[] = $product;
-            $product->addFeature($this);
-        }
-
-        return $this;
-    }
-
-    public function removeProduct(Product $product): self
-    {
-        if ($this->products->contains($product)) {
-            $this->products->removeElement($product);
-            $product->removeFeature($this);
-        }
 
         return $this;
     }
