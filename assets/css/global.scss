@@ -9,6 +9,9 @@ $theme-colors: (
 
 $glowcol: $gray-900;
 
+$opener: $gray-500;
+
+$enable-responsive-font-sizes: true;
 
 
 // the ~ allows you to reference things in node_modules
@@ -191,6 +194,30 @@ body {
 main {
   padding-top: 56px;
   flex: 1 0 auto;
+}
+
+/*
+FONT SIZES
+ */
+
+@media(min-width: breakpoint-min("md")) {
+
+  .lg-big {
+    font-size: 4rem;
+  }
+
+  .lg-big-sub {
+    font-size: 2rem;
+  }
+
+}
+
+.opener {
+  color: $opener;
+}
+
+.opener:hover {
+  color: $opener;
 }
 
 

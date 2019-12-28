@@ -6,19 +6,20 @@
 
     <div data-jarallax data-speed="0.2" class="jarallax parallax_sec firstscreen" data-img-position="center" data-img-size="scale-down">
         <picture class="jarallax-img">
-            <source srcset="{{ asset('promo/imac15_retina_opener.png') }}" media="(min-width: 992px)">
+            <source srcset="{{ asset('promo/imac15_retina_opener.png') }}" media="(min-width: 1200px)">
+            <source srcset="{{ asset('promo/Promo-Mac_macbookgold_front.png') }}" media="(min-width: 992px)">
             <source srcset="{{ asset('promo/iPadPro3-C_ipadair2_spacegrey_landscape.png') }}" media="(min-width: 768px)" style=>
             <img src="{{ asset('promo/iPhone-11Max_iphonexspacegrey_portrait.png') }}" class="aida-a" style="max-width: 100vw;">
         </picture>
         <div class="welcome h-100 d-flex justify-content-center align-items-center">
-            <div class="text-center">
-                <h1 class="text-center blend-diff girassol">Medienverwaltung</h1>
-                <i class="text-center blend-diff">Ihr neuer Weg, den Überblick zu behalten!</i>
+            <div class="text-center opener">
+                <h1 class="text-center blend-diff girassol lg-big">Medienverwaltung</h1>
+                <i class="text-center blend-diff lg-big-sub">Ihr neuer Weg, den Überblick zu behalten!</i>
 
                 <div class="h-100 d-flex justify-content-center align-items-center">
                     <div class="arrow animated bounce" id="arrow">
 
-                        <a href="#start" class="scrolldown text-white text-center blend-diff"><i class="material-icons md-56">keyboard_arrow_down</i></a>
+                        <a href="#start" class="scrolldown {#text-white#} opener text-center blend-diff"><i class="material-icons md-56">keyboard_arrow_down</i></a>
 
                     </div>
                 </div>
@@ -157,6 +158,10 @@
 
     <div class="container section flsec">
 
+        <div class="head text-center">
+            <a id="installation"><h1>Was unsere Kunden sagen</h1></a>
+        </div>
+
         {{ include('start/ratings.part.html.twig') }}
 
     </div>
@@ -192,4 +197,6 @@
 
         </script>
     {% endblock %}
+
+    {{ include('demo/demo.modal.html.twig') }}
 {% endblock %}
