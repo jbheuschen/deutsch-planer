@@ -22,3 +22,35 @@
  * SOFTWARE.
  */
 
+$(document).ready(function() {
+
+    var off = false;
+    var old = "";
+
+    $(window).scroll(function() {
+        var top = $(window).scrollTop();
+        if(top > 220 && !off)
+        {
+            old = $(".aida-a").prop("currentSrc");
+
+            if(old === undefined)
+                return;
+
+            console.log(old + "///" + old.match(/[^\/]+$/)[0]);
+
+            //$(".aida-a").fadeTo(1000, 0.30, function() {
+                $("." + $.escapeSelector(old.match(/[^\/]+$/)[0])).prop("srcset", old + "-off.png");
+            //}).fadeTo(500, 1);
+
+            off = true;
+        } else if(top < 220 && off) {
+
+            //$(".aida-a").fadeTo(1000, 0.30, function() {
+                $("." + $.escapeSelector(old.match(/[^\/]+$/)[0])).prop("srcset", old);
+            //}).fadeTo(500, 1);
+
+            off = false;
+        }
+    });
+
+});

@@ -1,3 +1,27 @@
+/*!
+ * MIT License
+ *
+ * Copyright (c) 2019-2020 Julian B. Heuschen
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
 
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
@@ -227,24 +251,61 @@ FONT SIZES
 .phone-container-inner {
   position: relative;
   z-index: 0;
+  max-height: 1000px;
 }
 
 .abs_background {
   position: absolute;
+  top: 0;
   z-index: -20;
 }
 
 .overlay-img {
   position: relative;
+  top: 0;
   z-index: 100;
 }
 
 .zoom-out-bg {
-  transform: translate(11%, 20%);
+  transform: translate(11%, 16%);
 }
 
-.zoom-out-bg:hover {
-  transform: translate(11%, 20%) scale(1.1, 1.1);
+/*.zoom-out-bg:hover {
+  transform: translate(11%, 16%) scale(1.1, 1.1);
+}*/
+
+/*.container-fixed-state {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  //background-color: rgba(0, 0, 0, 0.9);
+  background-color: theme-color();
+}*/
+
+.promo-a-measures {
+  max-width: 765px;
+  max-height: 1361px;
+  width: auto;
+  height: auto;
+}
+
+.scale_down {
+  position: relative;
+  transform: scale(.5);
+}
+
+.back-trans {
+  transform: translate(-11%, -20%);
+}
+
+/*.phone-container {
+  position: static;
+}*/
+
+.sc-img {
+  transform: translateX(-30px);
+  display: block;
 }
 
 

@@ -4,12 +4,14 @@
 
 {% block body %}
 
+    {{ include('service/noscript.html.twig') }}
+
     <div data-jarallax data-speed="0.2" class="jarallax parallax_sec firstscreen" data-img-position="center" data-img-size="scale-down">
-        <picture class="jarallax-img">
-            <source srcset="{{ asset('promo/imac15_retina_opener.png') }}" media="(min-width: 1200px)">
-            <source srcset="{{ asset('promo/Promo-Mac_macbookgold_front.png') }}" media="(min-width: 992px)">
-            <source srcset="{{ asset('promo/iPadPro3-C_ipadair2_spacegrey_landscape.png') }}" media="(min-width: 768px)" style=>
-            <img src="{{ asset('promo/iPhone-11Max_iphonexspacegrey_portrait.png') }}" class="aida-a" style="max-width: 100vw;">
+        <picture class="jarallax-img first-img">
+            <source srcset="{{ asset('promo/imac_opener.png') }}" class="imac_opener.png" media="(min-width: 1200px)">
+            <source srcset="{{ asset('promo/macair_gold.png') }}" class="macair_gold.png" media="(min-width: 992px)">
+            <source srcset="{{ asset('promo/ipadair_ls.png') }}"  class="ipadair_ls.png" media="(min-width: 768px)" style=>
+            <img src="{{ asset('promo/iphone11_portrait.png') }}" class="aida-a" style="max-width: 100vw;">
         </picture>
         <div class="welcome h-100 d-flex justify-content-center align-items-center">
             <div class="text-center opener">
@@ -30,7 +32,7 @@
 
     <div class="container section flsec firstsection">
 
-        {{ include('devices/i8_features.part.html.twig') }}
+        {#{{ include('devices/i8_features.part.html.twig') }}#}
 
         <a id="start"><h1 class="text-center">Features</h1></a>
 
@@ -199,6 +201,7 @@
             })
 
         </script>
+        <script type="text/javascript" src="{{ asset('js/effects.js') }}"></script>
     {% endblock %}
 
     {{ include('demo/demo.modal.html.twig') }}
