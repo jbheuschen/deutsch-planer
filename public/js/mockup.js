@@ -88,7 +88,7 @@ $(document).ready(function() {
     var endpoint = Utils.getElementEndpoint($(".phone-container"));
     var begin = Utils.getElementBegin($(".phone-container"));
     /*$(window).scroll(function() {
-        console.log($(document).scrollTop());
+        //console.log($(document).scrollTop());
         //console.log(endpoint);
         var st = $(document).scrollTop();
         if(st > endpoint || st < begin)

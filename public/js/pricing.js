@@ -23,42 +23,22 @@
  */
 
 $(document).ready(function() {
+    if($("#self_host").is(":checked")) {
+        $(".self-host").hide();
+        $(".cloud-host").show();
+    } else {
+        $(".self-host").show();
+        $(".cloud-host").hide();
+    }
 
-    var off = false;
-    var old = "";
-
-    $(window).scroll(function() {
-        var top = $(window).scrollTop();
-        if(top > 220 && !off)
+    $("#self_host").click(function() {
+        if($(this).is(":checked"))
         {
-            old = $(".aida-a").prop("currentSrc");
-
-            if(old === undefined)
-                return;
-
-
-            //$(".aida-a").fadeTo(1000, 0.30, function() {
-                $("." + $.escapeSelector(old.match(/[^\/]+$/)[0])).prop("srcset", old + "-off.png");
-            //}).fadeTo(500, 1);
-
-            off = true;
-        } else if(top < 220 && off) {
-
-            //$(".aida-a").fadeTo(1000, 0.30, function() {
-                $("." + $.escapeSelector(old.match(/[^\/]+$/)[0])).prop("srcset", old);
-            //}).fadeTo(500, 1);
-
-            off = false;
+            $(".self-host").hide();
+            $(".cloud-host").show();
+        } else {
+            $(".self-host").show();
+            $(".cloud-host").hide();
         }
     });
-
-    $(".card-clickable").click(function() {
-       $(".card-clickable").removeClass("card-hover-state");
-       $(this).addClass("card-hover-state");
-    });
-
-    $(".card-hover-state").not(".dnra").click(function() {
-       $(this).removeClass("card-hover-state");
-    });
-
 });

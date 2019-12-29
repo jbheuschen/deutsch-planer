@@ -57,3 +57,7 @@ require('font-awesome/css/font-awesome.min.css');
 //import bootbox from 'bootbox';
 //var x = bootbox;
 //require('mdbootstrap/js/mdb.min.js');
+
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+})
