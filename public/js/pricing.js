@@ -22,3 +22,23 @@
  * SOFTWARE.
  */
 
+$(document).ready(function() {
+    if($("#self_host").is(":checked")) {
+        $(".self-host").hide();
+        $(".cloud-host").show();
+    } else {
+        $(".self-host").show();
+        $(".cloud-host").hide();
+    }
+
+    $("#self_host").click(function() {
+        if($(this).is(":checked"))
+        {
+            $(".self-host").hide();
+            $(".cloud-host").show();
+        } else {
+            $(".self-host").show();
+            $(".cloud-host").hide();
+        }
+    });
+});
