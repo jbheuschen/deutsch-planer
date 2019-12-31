@@ -17,6 +17,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+      
+    - name: Set Environment
+      run: export SYMFONY_ENV=test
 
     - name: Validate composer.json and composer.lock
       run: composer validate
