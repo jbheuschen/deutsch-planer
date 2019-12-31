@@ -37,9 +37,24 @@ class Plan
     private $badge_color;
 
     /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $badge_cloud;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $badge_cloud_color;
+
+    /**
      * @ORM\Column(type="array")
      */
     private $features = [];
+
+    /**
+     * @ORM\Column(type="array")
+     */
+    private $features_cloud = [];
 
     /**
      * @ORM\Column(type="float")
@@ -50,6 +65,36 @@ class Plan
      * @ORM\Column(type="float")
      */
     private $price_self;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $cloud_only;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $self_only;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $period;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $period_cloud;
+
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     */
+    private $discount;
+
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     */
+    private $discount_cloud;
 
     /**
      * @ORM\Column(type="text", nullable=true)
@@ -153,6 +198,114 @@ class Plan
     public function setCustomText(?string $custom_text): self
     {
         $this->custom_text = $custom_text;
+
+        return $this;
+    }
+
+    public function getFeaturesCloud(): ?array
+    {
+        return $this->features_cloud;
+    }
+
+    public function setFeaturesCloud(array $features_cloud): self
+    {
+        $this->features_cloud = $features_cloud;
+
+        return $this;
+    }
+
+    public function getBadgeCloud(): ?string
+    {
+        return $this->badge_cloud;
+    }
+
+    public function setBadgeCloud(?string $badge_cloud): self
+    {
+        $this->badge_cloud = $badge_cloud;
+
+        return $this;
+    }
+
+    public function getBadgeCloudColor(): ?string
+    {
+        return $this->badge_cloud_color;
+    }
+
+    public function setBadgeCloudColor(?string $badge_cloud_color): self
+    {
+        $this->badge_cloud_color = $badge_cloud_color;
+
+        return $this;
+    }
+
+    public function getCloudOnly(): ?bool
+    {
+        return $this->cloud_only;
+    }
+
+    public function setCloudOnly(bool $cloud_only): self
+    {
+        $this->cloud_only = $cloud_only;
+
+        return $this;
+    }
+
+    public function getSelfOnly(): ?bool
+    {
+        return $this->self_only;
+    }
+
+    public function setSelfOnly(bool $self_only): self
+    {
+        $this->self_only = $self_only;
+
+        return $this;
+    }
+
+    public function getPeriod(): ?string
+    {
+        return $this->period;
+    }
+
+    public function setPeriod(?string $period): self
+    {
+        $this->period = $period;
+
+        return $this;
+    }
+
+    public function getPeriodCloud(): ?string
+    {
+        return $this->period_cloud;
+    }
+
+    public function setPeriodCloud(?string $period_cloud): self
+    {
+        $this->period_cloud = $period_cloud;
+
+        return $this;
+    }
+
+    public function getDiscount(): ?float
+    {
+        return $this->discount;
+    }
+
+    public function setDiscount(?float $discount): self
+    {
+        $this->discount = $discount;
+
+        return $this;
+    }
+
+    public function getDiscountCloud(): ?float
+    {
+        return $this->discount_cloud;
+    }
+
+    public function setDiscountCloud(?float $discount_cloud): self
+    {
+        $this->discount_cloud = $discount_cloud;
 
         return $this;
     }

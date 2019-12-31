@@ -1,5 +1,4 @@
-<?php
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2019-2020 Julian B. Heuschen
@@ -23,28 +22,3 @@
  * SOFTWARE.
  */
 
-namespace App\Controller;
-
-use App\Repository\PlanRepository;
-use App\Repository\RatingRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
-
-class StartController extends AbstractController
-{
-    /**
-     * @Route("/", name="index")
-     * @param RatingRepository $r
-     * @param PlanRepository $p
-     * @return Response
-     */
-    public function index(RatingRepository $r, PlanRepository $p)
-    {
-        return $this->render('start/index.html.twig', [
-            'controller_name' => 'StartController',
-            'ratings' => $r->findBy([], ["stars" => "DESC"], 5),
-            'plans' => $p->findBy([], ["position" => "ASC"])
-        ]);
-    }
-}

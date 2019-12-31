@@ -16,65 +16,82 @@
 
 
 <div class="card-group mrt-20">
-    <div class="card card-hover card-clickable">
-        <span class="self-host">
-            <div class="ribbon red"><span>Rabatt</span></div>
-        </span>
-        <div class="card-header text-center">
-            Basic
-        </div>
-        <div class="card-body">
-            <div class="text-center">
-                <h1 class="card-title i-step price"><span class="self-host"><span class="strikethrough">11€</span>&nbsp;9€</span><span class="cloud-host">14€</span></h1>
-            </div>
-            <ul class="check-bullet">
-                <li>Grundfunktionalität</li>
-                <li>Bis zu 5 Benutzer</li>
-                <span class="cloud-host"><li>Bis zu 500MB <span data-toggle="tooltip" data-html="true" title="Datenbank- und Festplattenspeicher">Speicher</span></li></span>
-            </ul>
-        </div>
-        <div class="card-footer text-center">
-            <small class="text-muted"><span class="self-host">einmalig</span><span class="cloud-host">jährlich</span></small>
-        </div>
-    </div>
-    <div class="card card-hover card-clickable">
-        <span class="cloud-host">
-            <div class="ribbon green"><span>Top-Preis</span></div>
-        </span>
-        <div class="card-header text-center">
-            Pro
-        </div>
-        <div class="card-body">
-            <div class="text-center">
-                <h1 class="card-title i-step price"><span class="self-host">19€</span><span class="cloud-host"><span class="strikethrough">27€</span>&nbsp;24€</span></h1>
-            </div>
-            <ul class="check-bullet">
-                <li>Basic</li>
-                <li>Bis zu 150 Benutzer</li>
-                <li>Importassistent</li>
-                <li>Exportfunktionalität</li>
-                <li>LDAP-Anbindung</li>
-                <li>E-Mail-Benachrichtigungen</li>
-                <span class="cloud-host"><li>Bis zu 15GB <span data-toggle="tooltip" data-html="true" title="Datenbank- und Festplattenspeicher">Speicher</span></li></span>
-            </ul>
-        </div>
-        <div class="card-footer text-center">
-            <small class="text-muted"><span class="self-host">einmalig</span><span class="cloud-host">jährlich</span></small>
-        </div>
-    </div>
-    <div class="card card-hover card-clickable">
-        <div class="card-header text-center">
-            Enterprise
-        </div>
-        <div class="card-body text-center">
-            <p class="card-text">Sie wollen die Software in Ihrem Unternehmen einsetzten? Kontaktieren Sie uns jetzt, um ein auf Ihre Bedürfnisse zugeschnittenes Preisangebot zu erhalten!</p>
-        </div>
-        <div class="card-footer text-center">
-            <small class="text-muted">Kontaktieren Sie uns jetzt</small>
-        </div>
-    </div>
+
+            {% for plan in plans %}
+
+                        <div class="card card-hover card-clickable{% if plan.selfOnly %}
+                    self-host
+                {% elseif plan.cloudOnly %}
+                    cloud-host
+                {% endif %}">
+                            {% if plan.badge is not null %}
+                                <span class="self-host">
+                                    <div class="ribbon {{ plan.badgeColor }}"><span>{{ plan.badge }}</span></div>
+                                </span>
+                            {% endif %}
+                            {% if plan.badgeCloud is not null %}
+                                <span class="cloud-host">
+                                    <div class="ribbon {{ plan.badgeCloudColor }}"><span>{{ plan.badgeCloud }}</span></div>
+                                </span>
+                            {% endif %}
+                                <div class="card-header text-center">
+                                    {{ plan.name }}
+                                </div>
+                                <div class="card-body">
+                                    {% if plan.customText is null %}
+                                        <div class="text-center">
+                                            <h1 class="card-title i-step price">
+                                                <span class="self-host">{% if plan.discount is not null %}<sup><span class="strikethrough">{{ plan.priceSelf|number_format(2, ',', '.') }}€</span></sup>&nbsp;{% endif %}{% if plan.discount is not null %}{{ plan.discount|number_format(2, ',', '.') }}€{% else %}{{ plan.priceSelf|number_format(2, ',', '.') }}€{% endif %}</span>
+                                                <span class="cloud-host">{% if plan.discountCloud is not null %}<sup><span class="strikethrough">{{ plan.priceCloud|number_format(2, ',', '.') }}€</span></sup>&nbsp;{% endif %}{% if plan.discountCloud is not null %}{{ plan.discountCloud|number_format(2, ',', '.') }}€{% else %}{{ plan.priceCloud|number_format(2, ',', '.') }}€{% endif %}</span>
+                                            </h1>
+                                        </div>
+                                        <ul class="check-bullet">
+                                            <span class="self-host">
+
+                                                {% for feat in plan.features %}
+                                                    <li>{{ feat }}</li>
+                                                {% else %}
+                                                    <li>(Momentan sind keine Daten verfügbar.)</li>
+                                                {% endfor %}
+
+                                            </span>
+                                            <span class="cloud-host">
+
+                                                {% for feat in plan.featuresCloud %}
+                                                    <li>{{ feat }}</li>
+                                                {% else %}
+                                                    <li>(Momentan sind keine Daten verfügbar.)</li>
+                                                {% endfor %}
+
+                                            </span>
+                                        </ul>
+                                    {% else %}
+                                        <p class="card-text">{{ plan.customText }}</p>
+                                    {% endif %}
+                                </div>
+                                <div class="card-footer text-center">
+                                    <small class="period" style="color: #6c757d;"><span class="self-host">{{ plan.period|default('einmalig') }}</span><span class="cloud-host">{{ plan.periodCloud|default('jährlich') }}</span></small>
+                                </div>
+                        </div>
+            {% else %}
+
+            {% endfor %}
 </div>
 
 <small class="text-muted">Alle angegebenen Preise beinhalten - soweit für Ihr Land zutreffend - anfallende Mehrwert- oder Umsatzsteuern.</small>
 
 <script type="text/javascript" src="{{ asset('js/pricing.js') }}"></script>
+<script>
+    $(document).ready(function() {
+        var sly = new Sly( '.frame1', $.extend(Sly.defaults, {
+            speed: 300,
+            smart: 1
+        }));
+        sly.init();
+
+        $(window).resize(function(e) {
+            $('.frame1').sly('reload');
+        });
+    });
+
+</script>
