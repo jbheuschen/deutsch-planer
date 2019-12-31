@@ -22,6 +22,11 @@
  * SOFTWARE.
  */
 
+function highlightPeriod()
+{
+    $(".period").animate({ color: "#ffe63b" }, 700).animate({color: "#6c757d"}, 500);
+}
+
 $(document).ready(function() {
     if($("#self_host").is(":checked")) {
         $(".self-host").hide();
@@ -36,9 +41,11 @@ $(document).ready(function() {
         {
             $(".self-host").hide();
             $(".cloud-host").show();
+            highlightPeriod();
         } else {
             $(".self-host").show();
             $(".cloud-host").hide();
+            highlightPeriod();
         }
     });
 });

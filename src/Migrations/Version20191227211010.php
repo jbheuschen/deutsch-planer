@@ -23,28 +23,36 @@
  * SOFTWARE.
  */
 
-namespace App\Controller;
+declare(strict_types=1);
 
-use App\Repository\PlanRepository;
-use App\Repository\RatingRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
+namespace DoctrineMigrations;
 
-class StartController extends AbstractController
+use Doctrine\DBAL\Schema\Schema;
+use Doctrine\Migrations\AbstractMigration;
+
+/**
+ * Auto-generated Migration: Please modify to your needs!
+ */
+final class Version20191227211010 extends AbstractMigration
 {
-    /**
-     * @Route("/", name="index")
-     * @param RatingRepository $r
-     * @param PlanRepository $p
-     * @return Response
-     */
-    public function index(RatingRepository $r, PlanRepository $p)
+    public function getDescription() : string
     {
-        return $this->render('start/index.html.twig', [
-            'controller_name' => 'StartController',
-            'ratings' => $r->findBy([], ["stars" => "DESC"], 5),
-            'plans' => $p->findBy([], ["position" => "ASC"])
-        ]);
+        return '';
+    }
+
+    public function up(Schema $schema) : void
+    {
+        // this up() migration is auto-generated, please modify it to your needs
+        $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
+
+        $this->addSql('ALTER TABLE rating ADD image VARCHAR(255) DEFAULT NULL');
+    }
+
+    public function down(Schema $schema) : void
+    {
+        // this down() migration is auto-generated, please modify it to your needs
+        $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
+
+        $this->addSql('ALTER TABLE rating DROP image');
     }
 }
