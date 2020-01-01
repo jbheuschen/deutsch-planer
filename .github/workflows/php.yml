@@ -12,18 +12,8 @@ jobs:
     - name: Set Environment
       run: export SYMFONY_ENV=test
       
-    - name: Shutdown built-in mysql
-      run: sudo service mysql stop
-
-    - uses: mirromutth/mysql-action@v1.1
-      with:
-        host port: 3306 # Optional, default value is 3306. The port of host
-        container port: 3306 # Optional, default value is 3306. The port of container
-        character set server: 'utf8' # Optional, default value is 'utf8mb4'. The '--character-set-server' option for mysqld
-        collation server: 'utf8_general_ci' # Optional, default value is 'utf8mb4_general_ci'. The '--collation-server' option for mysqld
-        mysql version: '8.0' # Optional, default value is "latest". The version of the MySQL
-        mysql database: 'not_used' # Optional, default value is "test". The specified database which will be create
-        mysql root password: '0000' # Required if "mysql user" is empty, default is empty. The root superuser password
+    - name: Start built-in mysql
+      run: sudo service mysql start
 
     - name: Validate composer.json and composer.lock
       run: composer validate
@@ -32,13 +22,16 @@ jobs:
       run: composer install --prefer-dist --no-progress --no-suggest --no-scripts
     
     - name: Install yarn
+      run: npm i yarn
+      
+    - name: Create database
       run: php bin/console doctrine:database:create -n --env=test
       
     - name: Create database schema
       run: php bin/console doctrine:schema:create -n --env=test
       
     - name: Clear cache
-      run: npm i yarn
+      run: php bin/console cache:clear -n --no-warmup --env=test
       
     - name: Install dependencies
       run: yarn install
@@ -46,14 +39,8 @@ jobs:
     - name: Build assets
       run: yarn encore production
       
-    - name: Create database
-      run: php bin/console cache:clear --env=test
+    - name: Clear cache
+      run: php bin/console cache:clear --no-warmup --env=test
       
     - name: Run PHPUnit
       run: php bin/phpunit
-
-    # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
-    # Docs: https://getcomposer.org/doc/articles/scripts.md
-
-    # - name: Run test suite
-    #   run: composer run-script test
