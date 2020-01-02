@@ -26,6 +26,7 @@
         "bootbox": "^5.4.0",
         "chart.js": "^2.9.3",
         "font-awesome": "^4.7.0",
+        "highlight.js": "^9.17.1",
         "jarallax": "^1.12.0",
         "jquery-parallax.js": "^1.5.0",
         "jquery.stellar": "^0.6.2",
