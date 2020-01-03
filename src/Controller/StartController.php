@@ -25,26 +25,33 @@
 
 namespace App\Controller;
 
+use App\Repository\FeatureRepository;
 use App\Repository\PlanRepository;
 use App\Repository\RatingRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * Class StartController
+ * @package App\Controller
+ */
 class StartController extends AbstractController
 {
     /**
      * @Route("/", name="index")
      * @param RatingRepository $r
      * @param PlanRepository $p
+     * @param FeatureRepository $f
      * @return Response
      */
-    public function index(RatingRepository $r, PlanRepository $p)
+    public function index(RatingRepository $r, PlanRepository $p, FeatureRepository $f)
     {
         return $this->render('start/index.html.twig', [
             'controller_name' => 'StartController',
             'ratings' => $r->findBy([], ["stars" => "DESC"], 5),
-            'plans' => $p->findBy([], ["position" => "ASC"])
+            'plans' => $p->findBy([], ["position" => "ASC"]),
+            'features' => $f->findBy([], ["position" => "ASC"])
         ]);
     }
 }
