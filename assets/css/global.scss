@@ -488,6 +488,13 @@ ul.check-bullet li::before {
  */
 
 $blur-strength: 10px;
+$brightness-backdrop: 40%;
+
+$ios_blur_dark: blur($blur-strength) brightness($brightness-backdrop);
+$ios_blur_light: blur($blur-strength);
+
+$transition: backdrop-filter 2s ease;
+$transition-webkit: -webkit-backdrop-filter 2s ease;
 
 /*.bg-blur {
   -webkit-filter: blur($blur-strength);
@@ -503,4 +510,41 @@ body.blurred .con-cont, body.blurred .navbar, body.blurred #footer {
   -o-filter: blur($blur-strength);
   -ms-filter: blur($blur-strength);
   filter: blur($blur-strength);
+}
+
+.opener-box {
+  padding-left: 5px;
+  padding-right: 5px;
+  backdrop-filter: $ios_blur_dark;
+  -webkit-backdrop-filter: $ios_blur_dark;
+  -o-backdrop-image: $ios_blur_dark;
+  -moz-backdrop-image: $ios_blur_dark;
+  border-radius: 25px;
+  //border-color: rgba(0, 0, 0, 0.6);
+  //border-width: 1px;
+  //border-style: solid;
+  transition: $transition;
+  -webkit-transition: $transition-webkit;
+  -o-transition: $transition;
+  -moz-transition: $transition;
+}
+
+/*.opener-box::before {
+  content: '';
+  margin: -35px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  filter: $ios_blur_dark;
+  z-index: -1;
+}*/
+
+.opener-box:hover {
+  border-style: none;
+  border-width: 0;
+  border-color: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(0);
+  -webkit-backdrop-filter: blur(0);
 }
