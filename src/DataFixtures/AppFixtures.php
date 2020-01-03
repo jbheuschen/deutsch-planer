@@ -44,7 +44,7 @@ class AppFixtures extends Fixture
 
         $manager->persist($user);
 
-        $imageA = new Image();
+        /*$imageA = new Image();
         $imageA->setPath("/Library/WebServer/Documents/d-planer/uploads/hubble.jpg");
         $imageA->setFilename("hubble.jpg");
         $imageA->setMime("image/jpeg");
@@ -60,7 +60,7 @@ class AppFixtures extends Fixture
         $imageC->setPath("/Library/WebServer/Documents/d-planer/uploads/s80-37406.jpg");
         $imageC->setFilename("s80-37406.jpg");
         $imageC->setMime("image/jpeg");
-        $manager->persist($imageC);
+        $manager->persist($imageC);*/
 
 
         $manager->flush();
