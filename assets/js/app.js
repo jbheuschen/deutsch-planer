@@ -72,5 +72,9 @@ $(function () {
     $("#demo_modalModalCenter").on("hidden.bs.modal", function(e) {
         $(".con-cont").removeClass("bg-blur");
         $("body").removeClass("blurred");
-    })
+    });
+
+    $(".opener-box").mouseenter(function() {
+
+    });
 });

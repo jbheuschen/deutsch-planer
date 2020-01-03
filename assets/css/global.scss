@@ -524,7 +524,7 @@ body.blurred .con-cont, body.blurred .navbar, body.blurred #footer {
   //border-width: 1px;
   //border-style: solid;
   transition: $transition;
-  -webkit-transition: $transition-webkit;
+  -webkit-transition: $transition;
   -o-transition: $transition;
   -moz-transition: $transition;
 }
