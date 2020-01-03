@@ -62,5 +62,15 @@ require('../css/jquery-ui.min.css');
 //require('mdbootstrap/js/mdb.min.js');
 
 $(function () {
-    $('[data-toggle="tooltip"]').tooltip()
-})
+    $('[data-toggle="tooltip"]').tooltip();
+
+    $("#demo_modalModalCenter").on("show.bs.modal", function(e) {
+        $(".con-cont").addClass("bg-blur");
+        $("body").addClass("blurred");
+    });
+
+    $("#demo_modalModalCenter").on("hidden.bs.modal", function(e) {
+        $(".con-cont").removeClass("bg-blur");
+        $("body").removeClass("blurred");
+    })
+});

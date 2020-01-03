@@ -482,3 +482,25 @@ ul.check-bullet li::before {
   color: green;
   padding: 0 10px 0 0;
 }
+
+/*
+  BLUR EFFECTS
+ */
+
+$blur-strength: 10px;
+
+/*.bg-blur {
+  -webkit-filter: blur($blur-strength);
+  -moz-filter: blur($blur-strength);
+  -o-filter: blur($blur-strength);
+  -ms-filter: blur($blur-strength);
+  filter: blur($blur-strength);
+}*/
+
+body.blurred .con-cont, body.blurred .navbar, body.blurred #footer {
+  -webkit-filter: blur($blur-strength);
+  -moz-filter: blur($blur-strength);
+  -o-filter: blur($blur-strength);
+  -ms-filter: blur($blur-strength);
+  filter: blur($blur-strength);
+}
