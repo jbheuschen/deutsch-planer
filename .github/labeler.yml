@@ -1,0 +1,8 @@
+core: src/**/*.php
+assets: public/**
+css: assets/**/*.css
+javascript: assets/**/*.js
+dependencies: composer.json
+templates: templates/**/*.html.twig
+documentation: readme.md
+configuration: .env.*
