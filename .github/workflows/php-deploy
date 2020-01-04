@@ -1,0 +1,49 @@
+name: Deployment
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: self-hosted
+    steps:
+    - uses: actions/checkout@v1
+      
+    - name: Set Environment
+      run: export SYMFONY_ENV=test
+      
+    - name: Start built-in mysql
+      run: sudo service mysql start
+
+    - name: Validate composer.json and composer.lock
+      run: composer validate
+
+    - name: Install dependencies
+      run: composer install --prefer-dist --no-progress --no-suggest --no-scripts
+    
+    - name: Install yarn
+      run: npm i yarn
+      
+    - name: Create database
+      run: php bin/console doctrine:database:create -n --env=test
+      
+    - name: Create database schema
+      run: php bin/console doctrine:schema:create -n --env=test
+      
+    - name: Clear cache
+      run: php bin/console cache:clear -n --no-warmup --env=test
+      
+    - name: Install dependencies
+      run: yarn install
+    
+    - name: Build assets
+      run: yarn encore production
+      
+    - name: Clear cache
+      run: php bin/console cache:clear --no-warmup --env=test
+      
+    - name: Run PHPUnit
+      run: php bin/phpunit
+      
+    - name: Deploy
+      run: echo "To be implemented"
