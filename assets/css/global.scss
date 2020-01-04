@@ -493,7 +493,7 @@ $brightness-backdrop: 40%;
 $ios_blur_dark: blur($blur-strength) brightness($brightness-backdrop);
 $ios_blur_light: blur($blur-strength);
 
-$transition: backdrop-filter 2s ease;
+$transition: backdrop-filter 2s ease, -webkit-backdrop-filter 2s ease;
 $transition-webkit: -webkit-backdrop-filter 2s ease;
 
 /*.bg-blur {
@@ -517,16 +517,31 @@ body.blurred .con-cont, body.blurred .navbar, body.blurred #footer {
   padding-right: 5px;
   backdrop-filter: $ios_blur_dark;
   -webkit-backdrop-filter: $ios_blur_dark;
-  -o-backdrop-image: $ios_blur_dark;
-  -moz-backdrop-image: $ios_blur_dark;
+  -o-backdrop-filter: $ios_blur_dark;
+  -moz-backdrop-filter: $ios_blur_dark;
   border-radius: 25px;
   //border-color: rgba(0, 0, 0, 0.6);
   //border-width: 1px;
   //border-style: solid;
-  transition: $transition;
+
   -webkit-transition: $transition;
   -o-transition: $transition;
   -moz-transition: $transition;
+  transition: $transition;
+}
+
+/*.opener-box::before {
+  visibility: visible;
+  content: '';
+  position: absolute;
+  width: 110%;
+  height: 110%;
+  top: -5%;
+  bottom: -5%;
+  background: inherit;
+  -webkit-filter: url('#blur') saturate(2);
+  -moz-filter: url('#blur');
+  filter: url('#blur');
 }
 
 /*.opener-box::before {
@@ -545,6 +560,61 @@ body.blurred .con-cont, body.blurred .navbar, body.blurred #footer {
   border-style: none;
   border-width: 0;
   border-color: rgba(0, 0, 0, 0);
-  backdrop-filter: blur(0);
-  -webkit-backdrop-filter: blur(0);
+  backdrop-filter: blur(0) brightness(100%);
+  -webkit-backdrop-filter: blur(0) brightness(100%);
+  -o-backdrop-filter: blur(0) brightness(100%);
+  -moz-backdrop-filter: blur(0) brightness(100%);
 }
+
+/*.z-1 {
+  z-index: 1;
+}
+
+.z-10 {
+  z-index: 10;
+}
+
+.stack {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+
+/*
+  FIREFOX WORKAROUND by JBH
+
+
+.outer {
+  display: grid;
+  grid-template: 1fr / 1fr;
+  place-items: center;
+}
+.outer > * {
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
+}
+.outer .top {
+  z-index: 2;
+}
+.outer .top {
+  z-index: 1;
+}
+
+.outer .below {
+  background: transparent;
+  filter: $ios_blur_dark;
+  width: 100%;
+  height: 100%;
+}
+
+.outer .below::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  filter: $ios_blur_dark;
+}*/
+
+
