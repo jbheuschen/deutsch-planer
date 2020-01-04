@@ -9,6 +9,8 @@ easy_admin:
       - App\Entity\Rating
       - App\Entity\Feature
       - App\Entity\Plan
+      - App\Entity\User
+
 
     design:
       brand_color: '#009999'

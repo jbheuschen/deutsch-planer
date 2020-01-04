@@ -1,4 +1,4 @@
-<div class="card-deck feature-deck">
+{#<div class="card-deck feature-deck">
 
 
     <div class="card text-center feature">
@@ -88,6 +88,28 @@
 
 </div>
 
+
+{#VERSION 2#}
+
+<div class="row row-cols-1 row-cols-md-2">
+    {% for feat in features %}
+    <div class="col mb-4">
+        <div class="card text-center feature mx-auto">
+
+            <i class="fas fa-{{ feat.icon }} fa-5x"></i>
+
+            <h3>{{ feat.name }}</h3>
+
+            <p class="feature-desc away">{{ feat.description|raw }}</p>
+
+            <div class="card-footer">
+                <a class="btn btn-secondary w-100" data-toggle="modal" data-target="#details" data-icon="{{ feat.icon }}" data-title="{{ feat.name }}" data-description="{{ feat.description|raw }}" href="#">Mehr</a>
+            </div>
+
+        </div>
+    </div>
+    {% endfor %}
+</div>
 
 
 {#MODAL#}

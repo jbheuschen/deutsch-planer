@@ -4,220 +4,229 @@
 
 {% block body %}
 
-    {{ include('service/noscript.html.twig') }}
+    <div class="con-cont">
 
-    <div data-jarallax data-speed="0.2" class="jarallax parallax_sec firstscreen" data-img-position="center"
-         data-img-size="scale-down">
-        <picture class="jarallax-img first-img">
-            <source srcset="{{ asset('promo/imac_opener.png') }}" class="imac_opener.png" media="(min-width: 1200px)">
-            <source srcset="{{ asset('promo/macair_gold.png') }}" class="macair_gold.png" media="(min-width: 992px)">
-            <source srcset="{{ asset('promo/ipadair_ls.png') }}" class="ipadair_ls.png" media="(min-width: 768px)"
-                    style=>
-            <img src="{{ asset('promo/iphone11_portrait.png') }}" class="aida-a" style="max-width: 100vw;">
-        </picture>
-        <div class="welcome h-100 d-flex justify-content-center align-items-center">
-            <div class="text-center opener">
-                <h1 class="text-center blend-diff girassol lg-big">MediFix</h1>
-                <i class="text-center blend-diff lg-big-sub">Ihr neuer Weg, den Überblick zu behalten!</i>
+        {{ include('service/noscript.html.twig') }}
 
-                <div class="h-100 d-flex justify-content-center align-items-center">
-                    <div class="arrow animated bounce" id="arrow">
+        <div data-jarallax data-speed="0.2" class="jarallax parallax_sec firstscreen" data-img-position="center"
+             data-img-size="scale-down">
+            <picture class="jarallax-img first-img">
+                <source srcset="{{ asset('promo/imac_opener.png') }}" class="imac_opener.png" media="(min-width: 1200px)">
+                <source srcset="{{ asset('promo/macair_gold.png') }}" class="macair_gold.png" media="(min-width: 992px)">
+                <source srcset="{{ asset('promo/ipadair_ls.png') }}" class="ipadair_ls.png" media="(min-width: 768px)"
+                        style=>
+                <img src="{{ asset('promo/iphone11_portrait.png') }}" class="aida-a" style="max-width: 100vw;">
+            </picture>
+            <div class="welcome h-100 d-flex justify-content-center align-items-center">
+                <div class="text-center opener opener-box">
+                        <h1 class="text-center blend-diff girassol lg-big">MediFix</h1>
+                        <i class="text-center blend-diff lg-big-sub">Ihr neuer Weg, den Überblick zu behalten!</i>
 
-                        <a href="#start" class="scrolldown {#text-white#} opener text-center blend-diff"><i
-                                    class="material-icons md-56">keyboard_arrow_down</i></a>
+                        <div class="h-100 d-flex justify-content-center align-items-center">
+                            <div class="arrow animated bounce" id="arrow">
 
-                    </div>
+                                <a href="#start" class="scrolldown {#text-white#} opener text-center blend-diff"><i
+                                            class="material-icons md-56">keyboard_arrow_down</i></a>
+
+                            </div>
+                        </div>
+                        {#<svg>
+                            <filter id="blur">
+                                <feGaussianBlur stdDeviation="5" />
+                            </filter>
+                        </svg>#}
                 </div>
             </div>
         </div>
-    </div>
 
 
-    <div class="container section flsec firstsection">
+        <div class="container section flsec firstsection">
 
-        {#{{ include('devices/i8_features.part.html.twig') }}#}
+            {#{{ include('devices/i8_features.part.html.twig') }}#}
 
-        <a id="start"><h1 class="text-center">Features</h1></a>
+            <a id="start"><h1 class="text-center">Features</h1></a>
 
-        <br>
+            <br>
 
-        {#<div class="bd-example">
-            <div id="features" class="carousel slide carousel-fade" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#features" data-slide-to="0" class="active"></li>
-                    <li data-target="#features" data-slide-to="1"></li>
-                    <li data-target="#features" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="{{ asset('images/hubble_emitting.jpg') }}" class="d-block w-100 sliderimg" alt="Feature I">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Produktfeature</h5>
-                            <p>Eine euphemistische Beschreibung für ein Feature.</p>
+            {#<div class="bd-example">
+                <div id="features" class="carousel slide carousel-fade" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#features" data-slide-to="0" class="active"></li>
+                        <li data-target="#features" data-slide-to="1"></li>
+                        <li data-target="#features" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="{{ asset('images/hubble_emitting.jpg') }}" class="d-block w-100 sliderimg" alt="Feature I">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Produktfeature</h5>
+                                <p>Eine euphemistische Beschreibung für ein Feature.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{{ asset('images/hubble.jpg') }}" class="d-block w-100 sliderimg" alt="Feature II">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Produktfeature II</h5>
+                                <p>Eine euphemistische Beschreibung für ein Feature.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{{ asset('images/s80-37406.jpg') }}" class="d-block w-100 sliderimg" alt="Feature III">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Produktfeature III</h5>
+                                <p>Eine euphemistische Beschreibung für ein Feature.</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="carousel-item">
-                        <img src="{{ asset('images/hubble.jpg') }}" class="d-block w-100 sliderimg" alt="Feature II">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Produktfeature II</h5>
-                            <p>Eine euphemistische Beschreibung für ein Feature.</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="{{ asset('images/s80-37406.jpg') }}" class="d-block w-100 sliderimg" alt="Feature III">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Produktfeature III</h5>
-                            <p>Eine euphemistische Beschreibung für ein Feature.</p>
-                        </div>
-                    </div>
+                    <a class="carousel-control-prev" href="#features" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">zurück</span>
+                    </a>
+                    <a class="carousel-control-next" href="#features" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">weiter</span>
+                    </a>
                 </div>
-                <a class="carousel-control-prev" href="#features" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">zurück</span>
-                </a>
-                <a class="carousel-control-next" href="#features" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">weiter</span>
-                </a>
+            </div>#}
+
+            {{ include('start/features.part.html.twig') }}
+
+
+
+
+        </div>
+
+        <div data-jarallax data-speed="0.2" class="jarallax parallax_sec">
+            <img class="jarallax-img" src="{{ asset('images/Par_A.png') }}" alt="">
+        </div>
+
+
+        <div class="container section flsec">
+
+            <div class="head text-center">
+                <a id="installation"><h1>Installation</h1></a>
             </div>
+            {{ include('start/installation.part.html.twig') }}
+
+            <br>
+
+            {#<div class="table-responsive">
+                <table class="table table-hover table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col" colspan="2">normale Installation</th>
+                            <th scope="col" colspan="2">Docker-Installation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <th scope="col">
+                                empfohlen
+                            </th>
+                            <th scope="col">
+                                benötigt
+                            </th>
+                            <th scope="col">
+                                empfohlen
+                            </th>
+                            <th scope="col">
+                                benötigt
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>Betriebssystem</td>
+                            <td><i class="fab fa-windows fail fp" title="Windows"></i><i class="fab fa-linux pass fp" title="Linux"></i><i class="fab fa-apple pass fp" title="MacOS"></i></td>
+                            <td><i class="fab fa-windows pass fp" title="Windows"></i><i class="fab fa-linux pass fp" title="Linux"></i><i class="fab fa-apple pass fp" title="MacOS"></i></td>
+                            <td><i class="fab fa-windows pass fp" title="Windows"></i><i class="fab fa-linux pass fp" title="Linux"></i><i class="fab fa-apple pass fp" title="MacOS"></i></td>
+                            <td><i class="fab fa-windows pass fp" title="Windows"></i><i class="fab fa-linux pass fp" title="Linux"></i><i class="fab fa-apple pass fp" title="MacOS"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Web-Server</td>
+                            <td>Apache 2</td>
+                            <td>Apache 2 / NGINX</td>
+                            <td><i class="fas fa-times fail" title="Nicht benötigt"></i></td>
+                            <td><i class="fas fa-times fail" title="Nicht benötigt"></i></td>
+                        </tr>
+                        <tr>
+                            <td>PHP</td>
+                            <td>PHP >= 7.3</td>
+                            <td>PHP > 7.2</td>
+                            <td><i class="fas fa-times fail" title="Nicht benötigt"></i></td>
+                            <td><i class="fas fa-times fail" title="Nicht benötigt"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>#}
+        </div>
+
+        <div data-jarallax data-speed="0.2" class="jarallax parallax_sec">
+            <img class="jarallax-img" src="{{ asset('images/hubble_emitting.jpg') }}" alt="">
+        </div>
+
+        <div class="container section flsec">
+
+            <div class="head text-center">
+                <a id="installation"><h1>Was unsere Kunden sagen</h1></a>
+            </div>
+
+            {{ include('start/ratings.part.html.twig') }}
+
+        </div>
+
+        <div data-jarallax data-speed="0.2" class="jarallax parallax_sec">
+            <img class="jarallax-img" src="{{ asset('images/hubble_emitting.jpg') }}" alt="">
+        </div>
+
+        <div class="container section flsec">
+
+            <div class="head text-center">
+                <a id="pricing"><h1>Greifen Sie jetzt zu!</h1></a>
+            </div>
+
+            {{ include('start/pricing.part.html.twig') }}
+
+        </div>
+
+        <div class="container section flsec">
+
+            {{ include('start/newsletter.part.html.twig') }}
+
+        </div>
+
+
+        {#<img class="thumbnail" src="{{ asset('images/hubble.jpg') }}" alt="image">
+        <img class="thumbnail" src="{{ asset('images/hubble_emitting.jpg') }}" alt="image">#}
+
+
+
+        {#<div data-jarallax data-speed="0.2" class="jarallax parallax_sec" data-jarallax-video="https://youtu.be/exFJZvJVU0k">
         </div>#}
 
-        {{ include('start/features.part.html.twig') }}
+        {% block javascripts %}
+            {{ parent() }}
+            <script type="text/javascript">
 
-
-
-
-    </div>
-
-    <div data-jarallax data-speed="0.2" class="jarallax parallax_sec">
-        <img class="jarallax-img" src="{{ asset('images/Par_A.png') }}" alt="">
-    </div>
-
-
-    <div class="container section flsec">
-
-        <div class="head text-center">
-            <a id="installation"><h1>Installation</h1></a>
-        </div>
-        {{ include('start/installation.part.html.twig') }}
-
-        <br>
-
-        {#<div class="table-responsive">
-            <table class="table table-hover table-dark">
-                <thead>
-                    <tr>
-                        <th scope="col"></th>
-                        <th scope="col" colspan="2">normale Installation</th>
-                        <th scope="col" colspan="2">Docker-Installation</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td></td>
-                        <th scope="col">
-                            empfohlen
-                        </th>
-                        <th scope="col">
-                            benötigt
-                        </th>
-                        <th scope="col">
-                            empfohlen
-                        </th>
-                        <th scope="col">
-                            benötigt
-                        </th>
-                    </tr>
-                    <tr>
-                        <td>Betriebssystem</td>
-                        <td><i class="fab fa-windows fail fp" title="Windows"></i><i class="fab fa-linux pass fp" title="Linux"></i><i class="fab fa-apple pass fp" title="MacOS"></i></td>
-                        <td><i class="fab fa-windows pass fp" title="Windows"></i><i class="fab fa-linux pass fp" title="Linux"></i><i class="fab fa-apple pass fp" title="MacOS"></i></td>
-                        <td><i class="fab fa-windows pass fp" title="Windows"></i><i class="fab fa-linux pass fp" title="Linux"></i><i class="fab fa-apple pass fp" title="MacOS"></i></td>
-                        <td><i class="fab fa-windows pass fp" title="Windows"></i><i class="fab fa-linux pass fp" title="Linux"></i><i class="fab fa-apple pass fp" title="MacOS"></i></td>
-                    </tr>
-                    <tr>
-                        <td>Web-Server</td>
-                        <td>Apache 2</td>
-                        <td>Apache 2 / NGINX</td>
-                        <td><i class="fas fa-times fail" title="Nicht benötigt"></i></td>
-                        <td><i class="fas fa-times fail" title="Nicht benötigt"></i></td>
-                    </tr>
-                    <tr>
-                        <td>PHP</td>
-                        <td>PHP >= 7.3</td>
-                        <td>PHP > 7.2</td>
-                        <td><i class="fas fa-times fail" title="Nicht benötigt"></i></td>
-                        <td><i class="fas fa-times fail" title="Nicht benötigt"></i></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>#}
-    </div>
-
-    <div data-jarallax data-speed="0.2" class="jarallax parallax_sec">
-        <img class="jarallax-img" src="{{ asset('images/hubble_emitting.jpg') }}" alt="">
-    </div>
-
-    <div class="container section flsec">
-
-        <div class="head text-center">
-            <a id="installation"><h1>Was unsere Kunden sagen</h1></a>
-        </div>
-
-        {{ include('start/ratings.part.html.twig') }}
-
-    </div>
-
-    <div data-jarallax data-speed="0.2" class="jarallax parallax_sec">
-        <img class="jarallax-img" src="{{ asset('images/hubble_emitting.jpg') }}" alt="">
-    </div>
-
-    <div class="container section flsec">
-
-        <div class="head text-center">
-            <a id="pricing"><h1>Greifen Sie jetzt zu!</h1></a>
-        </div>
-
-        {{ include('start/pricing.part.html.twig') }}
-
-    </div>
-
-    <div class="container section flsec">
-
-        {{ include('start/newsletter.part.html.twig') }}
-
-    </div>
-
-
-    {#<img class="thumbnail" src="{{ asset('images/hubble.jpg') }}" alt="image">
-    <img class="thumbnail" src="{{ asset('images/hubble_emitting.jpg') }}" alt="image">#}
-
-
-
-    {#<div data-jarallax data-speed="0.2" class="jarallax parallax_sec" data-jarallax-video="https://youtu.be/exFJZvJVU0k">
-    </div>#}
-
-    {% block javascripts %}
-        {{ parent() }}
-        <script type="text/javascript">
-
-            $('.scrolldown').click(function () {
-                $('html, body').animate({
-                    scrollTop: ($($(this).attr('href')).offset().top - 56)
-                }, 1000);
-                return false;
-            });
-
-            $(document).ready(function () {
-                $(".comparison").twentytwenty({
-                    'before_label': 'Heller Modus',
-                    'after_label': 'Dunkelmodus'
+                $('.scrolldown').click(function () {
+                    $('html, body').animate({
+                        scrollTop: ($($(this).attr('href')).offset().top - 56)
+                    }, 1000);
+                    return false;
                 });
-            })
 
-        </script>
-        <script type="text/javascript" src="{{ asset('js/effects.js') }}"></script>
-    {% endblock %}
+                $(document).ready(function () {
+                    $(".comparison").twentytwenty({
+                        'before_label': 'Heller Modus',
+                        'after_label': 'Dunkelmodus'
+                    });
+                })
+
+            </script>
+            <script type="text/javascript" src="{{ asset('js/effects.js') }}"></script>
+        {% endblock %}
+
+    </div>
 
     {{ include('demo/demo.modal.html.twig') }}
 {% endblock %}
