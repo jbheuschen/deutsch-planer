@@ -4,7 +4,7 @@
 
 export PATH="/home/push/.yarn/bin/:$PATH" #Needed for local purposes
 
-chmod -R 777 /var/www/mvv
+chmod -R 777 /var/www/html
 
 #if [ ! -f .env ]; then
 #  if [ -f ../.env.default ]; then
@@ -27,7 +27,7 @@ echo "Migrating database..."
 php bin/console doctrine:migrations:migrate -q -n
 echo "Done."
 
-chmod -R 777 /var/www/mvv
+chmod -R 777 /var/www/html
 
 
 
