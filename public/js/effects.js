@@ -27,6 +27,19 @@ $(document).ready(function() {
     var off = false;
     var old = "";
 
+
+
+    $(document).scroll(function() {
+        if($(window).width() >= 768 ) {
+            var y = $(this).scrollTop();
+            if (y > 800) {
+                $('.banner').fadeIn();
+            } else {
+                $('.banner').fadeOut();
+            }
+        }
+    });
+
     $(window).scroll(function() {
         var top = $(window).scrollTop();
         if(top > 220 && !off)

@@ -629,4 +629,38 @@ body.blurred .con-cont, body.blurred .navbar, body.blurred #footer {
   visibility: visible;
 }
 
+/*
+  BANNER
+ */
+
+@media(min-width: breakpoint-min('md')) {
+  .banner {
+    display: none;
+    position: fixed;
+    top: 56px;
+    left: 0;
+    right: 0;
+    background-color: rgba(155, 0, 6, 0.1);
+    min-width: 100px;
+    z-index: 1000;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    backdrop-filter: $ios_blur_light;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    text-align: center;
+  }
+
+  .banner:hover {
+    background-color: rgba(155, 0, 6, 0.4);
+  }
+}
+
+@media(max-width: breakpoint-max('sm')) {
+  .banner {
+    display: none;
+  }
+}
+
 
