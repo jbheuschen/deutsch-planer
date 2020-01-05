@@ -11,16 +11,16 @@
             ] %}active{% endif %}">
                 <a class="nav-link" href="{{ path('index') }}">Start <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item {% if app.request.attributes.get('_route') in [
+            {#<li class="nav-item {% if app.request.attributes.get('_route') in [
                 'product_index',
                 'product_show',
                 'product_edit',
                 'product_delete'
             ] %}active{% endif %}">
                 <a class="nav-link" href="{{ path('product_index') }}">Produkte</a>
-            </li>
+            </li>#}
             <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
+                <a class="nav-link" href="#features">Features</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Über uns</a>
