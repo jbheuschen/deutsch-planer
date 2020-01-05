@@ -617,4 +617,16 @@ body.blurred .con-cont, body.blurred .navbar, body.blurred #footer {
   filter: $ios_blur_dark;
 }*/
 
+/*
+  BUY BUTTONS
+ */
+
+.buy {
+  visibility: hidden;
+}
+
+.card-hover-state .card-body > .buy {
+  visibility: visible;
+}
+
 

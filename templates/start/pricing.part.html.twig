@@ -37,7 +37,7 @@
                                 <div class="card-header text-center">
                                     {{ plan.name }}
                                 </div>
-                                <div class="card-body">
+                                <div class="card-body d-flex flex-column">
                                     {% if plan.customText is null %}
                                         <div class="text-center">
                                             <h1 class="card-title i-step price">
@@ -68,6 +68,7 @@
                                     {% else %}
                                         <p class="card-text">{{ plan.customText }}</p>
                                     {% endif %}
+                                    <a class="btn btn-success mt-auto buy" href="#pricing" style="">Zur Kasse</a>
                                 </div>
                                 <div class="card-footer text-center">
                                     <small class="period" style="color: #6c757d;"><span class="self-host">{{ plan.period|default('einmalig') }}</span><span class="cloud-host">{{ plan.periodCloud|default('jährlich') }}</span></small>
