@@ -92,6 +92,35 @@
 
             {{ include('start/features.part.html.twig') }}
 
+            <a id="showcase-section"><h1 class="text-center" id="showcase-title">Unser neustes Feature</h1></a>
+
+            <div class="row">
+
+                <div class="col text-center">
+
+                    <button class="btn btn-secondary" id="showcase-trigger" type="button" data-toggle="collapse" data-target="#showcase" aria-expanded="false" aria-controls="showcase">Zeigen</button>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="collapse multi-collapse" id="showcase">
+                <div class="card">
+                    <div class="card-header text-center"><h4>Der Dunkelmodus</h4></div>
+                    <div class="card-body">
+
+                        <p>Der Dunkelmodus ermöglicht Ihnen ein bequemes Arbeiten - egal zu welcher Tageszeit oder in welcher Umgebung. In dunkelmodusfähigen Betriebssystemen - wie etwa MacOS oder einige Linux-Derivate - wird die betriebssystemweite Einstellung sogar automatisch erkannt und übernommen - auf diese Weise fügt sich MediFix perfekt in Ihre Arbeitsathmosphäre ein!</p>
+
+                        <div class="comparison twentytwenty-container">
+                            <img src="{{ asset('images/comparison/light.png') }}">
+                            <img src="{{ asset('images/comparison/dark.png') }}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
 
 
@@ -167,9 +196,18 @@
                 });
 
                 $(document).ready(function () {
+                    $("#showcase").collapse("show");
                     $(".comparison").twentytwenty({
                         'before_label': 'Heller Modus',
                         'after_label': 'Dunkelmodus'
+                    });
+                    setTimeout(function() {
+                        $("#showcase").collapse("hide");
+                    }, 500);
+                    $("#showcase").on("show.bs.collapse", function() {
+                       $("#showcase-trigger").fadeOut();
+                       if(!$("#showcase-title").html().endsWith(":"))
+                            $("#showcase-title").append(":");
                     });
                 })
 
