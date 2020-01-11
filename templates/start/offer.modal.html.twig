@@ -1,0 +1,60 @@
+<div class="modal fade" id="offer_modalModalOffer" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="offer_modalModalOfferTitle" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <div class="ribbon red" data-dismiss="modal"><span>Begrenzt</span></div>
+            <div class="modal-header">
+                <h5 class="modal-title" id="offer_modalModalOfferTitle">Sonderangebot</h5>
+            </div>
+            <div class="modal-body">
+
+                <h4>Nutzen Sie MediFix 30 Tage kostenlos - und anschließend zu einem stark vergünstigten Preis!</h4>
+
+                <ul class="check-bullet">
+
+                    <li>30 Tage lang kostenlos</li>
+                    <li>Anschließend nur 70% des Originalpreises</li>
+
+                </ul>
+
+                <div class="timer text-center">
+                    <h2><em><span id="t_h">14</span>h <span id="t_m">25</span>m <span id="t_s">59</span>s verbleibend</em></h2>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Schließen</button>
+                <a href="#pricing" target="_blank" class="btn btn-outline-success">Jetzt zugreifen</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function() {
+       setInterval(function() {
+           var x = $("#t_s").html();
+           if(x > 0)
+           {
+               $("#t_s").html(x - 1);
+               return;
+           }
+           $("#t_s").html(59);
+           var y = $("#t_m").html();
+           if(y > 0)
+           {
+               $("#t_m").html(y - 1);
+               return;
+           }
+           $("#t_m").html(59);
+           var z = $("#t_h").html();
+           if(z > 0)
+           {
+               $("#t_h").html(z - 1);
+               return;
+           }
+           clearInterval();
+       }, 1000);
+    });
+
+</script>

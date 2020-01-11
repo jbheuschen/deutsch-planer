@@ -640,7 +640,7 @@ body.blurred .con-cont, body.blurred .navbar, body.blurred #footer {
     top: 56px;
     left: 0;
     right: 0;
-    background-color: rgba(155, 0, 6, 0.1);
+    background-color: rgba(155, 0, 6, 0.3);
     min-width: 100px;
     z-index: 1000;
     padding-left: 10px;
@@ -653,7 +653,7 @@ body.blurred .con-cont, body.blurred .navbar, body.blurred #footer {
   }
 
   .banner:hover {
-    background-color: rgba(155, 0, 6, 0.4);
+    background-color: rgba(155, 0, 6, 0.6);
   }
 }
 
