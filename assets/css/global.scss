@@ -664,4 +664,8 @@ body.blurred .con-cont, body.blurred .navbar, body.blurred #footer {
   }
 }
 
+.soft-border {
+  box-shadow: 0 0 8px 8px theme-color("primary") inset !important;
+}
+
 
