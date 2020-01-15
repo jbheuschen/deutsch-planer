@@ -45,13 +45,15 @@ $(document).ready(function() {
         if(top > 220 && !off)
         {
             old = $(".aida-a").prop("currentSrc");
-
-            if(old === undefined)
+            console.log("trigger...");
+            if (old === undefined)
                 return;
-
+            console.log("go!");
 
             //$(".aida-a").fadeTo(1000, 0.30, function() {
-                $("." + $.escapeSelector(old.match(/[^\/]+$/)[0])).prop("srcset", old + "-off.png");
+            console.log($("." + $.escapeSelector(old.match(/[^\/]+$/)[0])));
+            $("." + $.escapeSelector(old.match(/[^\/]+$/)[0])).prop("srcset", old + "-off-min.png");
+            console.log("Searching:" + $.escapeSelector(old.match(/[^\/]+$/)[0]));
             //}).fadeTo(500, 1);
 
             off = true;
