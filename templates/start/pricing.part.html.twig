@@ -6,8 +6,9 @@
     <div class="col-sm-8"></div>
     <div class="col-sm-4 ml-auto">
 
-        <div class="custom-control custom-switch pull-right" data-toggle="tooltip" data-html="true" title="Wenn aktiviert, kümmern wir uns um die Installation und Einrichtung auf einem von uns bereitgestellten Server. <a href='#' target='{{ path('cloud_self') }}'>Mehr Infos...</a>">
-            <input type="checkbox" class="custom-control-input" id="self_host" checked>
+        <div class="custom-control custom-switch pull-right" data-toggle="tooltip" data-html="true"
+             title="Wenn aktiviert, kümmern wir uns um die Installation und Einrichtung auf einem von uns bereitgestellten Server. <a href='#' target='{{ path('cloud_self') }}'>Mehr Infos...</a>">
+            <input type="checkbox" class="custom-control-input" id="self_host" {#checked#}>
             <label class="custom-control-label" for="self_host">Cloud-Hosting</label>
         </div>
 
@@ -17,7 +18,7 @@
 
 <div class="card-group mrt-20">
 
-            {% for plan in plans %}
+    {% for plan in plans %}
 
                         <div class="card card-hover card-clickable{% if plan.selfOnly %}
                     self-host
