@@ -48,16 +48,12 @@ $(document).ready(function() {
             if (old === undefined)
                 return;
 
-            //$(".aida-a").fadeTo(1000, 0.30, function() {
             $("." + $.escapeSelector(old.match(/[^\/]+$/)[0])).prop("srcset", old + "-off-min.png");
-            //}).fadeTo(500, 1);
 
             off = true;
         } else if(top < 220 && off) {
 
-            //$(".aida-a").fadeTo(1000, 0.30, function() {
                 $("." + $.escapeSelector(old.match(/[^\/]+$/)[0])).prop("srcset", old);
-            //}).fadeTo(500, 1);
 
             off = false;
         }
