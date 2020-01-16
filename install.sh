@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# Copyright 2019 Julian B. Heuschen
+# Copyright 2019-2020 Julian B. Heuschen
 
-export PATH="/home/push/.yarn/bin/:$PATH" #Needed for local purposes
+export PATH="~/.yarn/bin/:$PATH"
 
 chmod -R 777 /var/www/html
 
